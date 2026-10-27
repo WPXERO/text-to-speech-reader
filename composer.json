@@ -1,0 +1,20 @@
+{
+    "name": "ttsr/text-to-speech-reader",
+    "description": "Development tooling for the Text to Speech Reader plugin. Not shipped in the plugin package.",
+    "type": "wordpress-plugin",
+    "license": "GPL-3.0-or-later",
+    "require-dev": {
+        "wp-coding-standards/wpcs": "^3",
+        "phpcompatibility/phpcompatibility-wp": "*",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.2"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "scripts": {
+        "lint": "phpcs",
+        "lint:fix": "phpcbf"
+    }
+}

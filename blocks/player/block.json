@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "text-to-speech-reader/player",
+	"version": "1.0.0",
+	"title": "Text to Speech Player",
+	"category": "media",
+	"icon": "controls-volumeon",
+	"description": "A Listen button that reads this content aloud with the visitor's browser voices.",
+	"keywords": [ "listen", "audio", "speech", "accessibility", "read aloud" ],
+	"textdomain": "text-to-speech-reader",
+	"usesContext": [ "postId" ],
+	"attributes": {
+		"layout": {
+			"type": "string",
+			"default": ""
+		},
+		"includeTitle": {
+			"type": "string",
+			"enum": [ "", "yes", "no" ],
+			"default": ""
+		}
+	},
+	"supports": {
+		"html": false,
+		"multiple": false,
+		"reusable": false
+	},
+	"editorScript": "ttsr-block-editor"
+}

@@ -1,0 +1,59 @@
+# Version updates for the development toolchain and CI actions. Nothing here
+# ships in the plugin package; CI must pass before an update is merged.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    ignore:
+      # The plugin runs on the React bundled with WordPress; these packages
+      # only serve tests and types, so they follow WordPress, not npm.
+      - dependency-name: react
+        update-types: [ 'version-update:semver-major' ]
+      - dependency-name: react-dom
+        update-types: [ 'version-update:semver-major' ]
+      - dependency-name: '@types/react'
+        update-types: [ 'version-update:semver-major' ]
+      # Major TypeScript releases change tsconfig options; upgrade by hand.
+      - dependency-name: typescript
+        update-types: [ 'version-update:semver-major' ]
+    groups:
+      wordpress:
+        patterns:
+          - '@wordpress/*'
+      react:
+        patterns:
+          - react
+          - react-dom
+          - '@types/react'
+      dev-tooling:
+        patterns:
+          - '*'
+        exclude-patterns:
+          - '@wordpress/*'
+          - react
+          - react-dom
+          - '@types/react'
+        update-types:
+          - minor
+          - patch
+
+  - package-ecosystem: composer
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      coding-standards:
+        patterns:
+          - '*'
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        patterns:
+          - '*'

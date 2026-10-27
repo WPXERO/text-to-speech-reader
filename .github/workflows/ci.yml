@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer, wp-cli
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          composer install --no-interaction --no-progress
+
+      - name: Check versions
+        run: npm run check-versions
+
+      - name: Build
+        run: npm run build
+
+      - name: Type check and lint
+        run: npm run lint
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Translation template
+        run: npm run makepot
+
+      - name: Package and verify
+        run: |
+          npm run package
+          npm run verify-package
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: text-to-speech-reader
+          path: dist/*.zip
+          retention-days: 14
+
+  php-compat:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: [ '7.4', '8.4' ]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+      - name: PHP syntax
+        run: find . -name '*.php' -not -path './node_modules/*' -not -path './vendor/*' -print0 | xargs -0 -n1 php -l

@@ -1,0 +1,124 @@
+name: Release
+
+# Push a tag such as v1.0.1 (matching the plugin's Version header) to build,
+# test and package the plugin, attach the ZIP to a GitHub Release and, when
+# enabled, deploy it to WordPress.org.
+#
+# WordPress.org deploy (off by default):
+#   - repository variable WPORG_DEPLOY = true
+#   - environment "wordpress.org" with secrets SVN_USERNAME and SVN_PASSWORD
+#     (add required reviewers to the environment to approve each deploy)
+#   - optional .wordpress-org/ directory with the plugin page assets
+#     (icons, banners, screenshots)
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer, wp-cli
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          composer install --no-interaction --no-progress
+
+      - name: Check the tag matches the plugin version
+        run: |
+          version=$(sed -n 's/^[ *]*Version:[[:space:]]*//p' text-to-speech-reader.php | head -n 1 | tr -d '\r')
+          if [ "${GITHUB_REF_NAME#v}" != "$version" ]; then
+            echo "::error::Tag ${GITHUB_REF_NAME} does not match plugin version ${version}"
+            exit 1
+          fi
+          npm run check-versions
+
+      - name: Build
+        run: npm run build
+
+      - name: Type check and lint
+        run: npm run lint
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Package
+        run: |
+          npm run makepot
+          npm run package
+          npm run verify-package
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: plugin-zip
+          path: dist/text-to-speech-reader.zip
+          if-no-files-found: error
+
+  github-release:
+    needs: package
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: plugin-zip
+          path: dist
+
+      - name: Create the GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/text-to-speech-reader.zip \
+            --verify-tag \
+            --title "Text to Speech Reader ${GITHUB_REF_NAME#v}" \
+            --generate-notes
+
+  wordpress-org:
+    needs: package
+    if: vars.WPORG_DEPLOY == 'true'
+    runs-on: ubuntu-latest
+    environment: wordpress.org
+    steps:
+      # Only for the .wordpress-org/ assets; the plugin files come from the
+      # verified package.
+      - uses: actions/checkout@v7
+
+      - uses: actions/download-artifact@v8
+        with:
+          name: plugin-zip
+          path: dist
+
+      - name: Unpack the release package
+        run: unzip -q dist/text-to-speech-reader.zip -d dist/package
+
+      - name: Deploy to WordPress.org
+        # 10up/action-wordpress-plugin-deploy 2.3.0, pinned to its commit.
+        uses: 10up/action-wordpress-plugin-deploy@54bd289b8525fd23a5c365ec369185f2966529c2
+        env:
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          SLUG: text-to-speech-reader
+          BUILD_DIR: dist/package/text-to-speech-reader
+          ASSETS_DIR: .wordpress-org
