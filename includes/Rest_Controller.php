@@ -61,7 +61,7 @@ final class Rest_Controller {
 					'permission_callback' => array( $this, 'can_manage' ),
 					'args'                => array(
 						'settings' => array(
-							'description' => __( 'Settings to change.', 'text-to-speech-reader' ),
+							'description' => __( 'Settings to change.', 'wpxero-text-to-speech' ),
 							'type'        => 'object',
 							'required'    => true,
 						),

@@ -1,5 +1,5 @@
 /**
- * Editor registration for the text-to-speech-reader/player block.
+ * Editor registration for the wpxero-text-to-speech/player block.
  * The block is dynamic: PHP renders the real player on the front end.
  */
 import { registerBlockType, type BlockConfiguration } from '@wordpress/blocks';
@@ -39,18 +39,18 @@ function Edit( {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={ __( 'Player', 'text-to-speech-reader' ) }>
+				<PanelBody title={ __( 'Player', 'wpxero-text-to-speech' ) }>
 					<SelectControl
 						__next40pxDefaultSize
 						__nextHasNoMarginBottom
-						label={ __( 'Layout', 'text-to-speech-reader' ) }
+						label={ __( 'Layout', 'wpxero-text-to-speech' ) }
 						value={ attributes.layout }
 						options={ [
 							{
 								value: '',
 								label: __(
 									'Use the global setting',
-									'text-to-speech-reader'
+									'wpxero-text-to-speech'
 								),
 							},
 							...layouts,
@@ -64,7 +64,7 @@ function Edit( {
 						__nextHasNoMarginBottom
 						label={ __(
 							'Read the title first',
-							'text-to-speech-reader'
+							'wpxero-text-to-speech'
 						) }
 						value={ attributes.includeTitle }
 						options={ [
@@ -72,16 +72,16 @@ function Edit( {
 								value: '',
 								label: __(
 									'Use the global setting',
-									'text-to-speech-reader'
+									'wpxero-text-to-speech'
 								),
 							},
 							{
 								value: 'yes',
-								label: __( 'Yes', 'text-to-speech-reader' ),
+								label: __( 'Yes', 'wpxero-text-to-speech' ),
 							},
 							{
 								value: 'no',
-								label: __( 'No', 'text-to-speech-reader' ),
+								label: __( 'No', 'wpxero-text-to-speech' ),
 							},
 						] }
 						onChange={ ( value: string ) =>
@@ -96,7 +96,7 @@ function Edit( {
 							<ExternalLink href={ data.settingsUrl }>
 								{ __(
 									'Global player settings',
-									'text-to-speech-reader'
+									'wpxero-text-to-speech'
 								) }
 							</ExternalLink>
 						</p>
@@ -117,13 +117,13 @@ function Edit( {
 						>
 							<path d="M8 5.5v13l10.5-6.5z" />
 						</svg>
-						{ __( 'Listen', 'text-to-speech-reader' ) }
+						{ __( 'Listen', 'wpxero-text-to-speech' ) }
 					</span>
 				</div>
 				<p className="ttsr-block-preview__note">
 					{ __(
 						'Text to Speech Player — reads this post aloud on the published page.',
-						'text-to-speech-reader'
+						'wpxero-text-to-speech'
 					) }
 				</p>
 			</div>

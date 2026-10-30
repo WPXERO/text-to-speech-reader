@@ -50,7 +50,7 @@ jobs:
 
       - uses: actions/upload-artifact@v7
         with:
-          name: text-to-speech-reader
+          name: wpxero-text-to-speech
           path: dist/*.zip
           retention-days: 14
 

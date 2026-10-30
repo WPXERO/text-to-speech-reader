@@ -42,7 +42,7 @@ export function PlayerPreview( props: {
 
 	const sampleTitle = __(
 		'A short article to try the player',
-		'text-to-speech-reader'
+		'wpxero-text-to-speech'
 	);
 	const config = filterPreviewConfig(
 		{
@@ -75,7 +75,7 @@ export function PlayerPreview( props: {
 		element.setAttribute( 'role', 'region' );
 		element.setAttribute(
 			'aria-label',
-			__( 'Player preview', 'text-to-speech-reader' )
+			__( 'Player preview', 'wpxero-text-to-speech' )
 		);
 		for ( const [ name, value ] of Object.entries( style ) ) {
 			if ( /^--ttsrp?-[a-z0-9-]+$/.test( name ) ) {
@@ -99,11 +99,11 @@ export function PlayerPreview( props: {
 
 	return (
 		<PreviewArea
-			title={ __( 'Live preview', 'text-to-speech-reader' ) }
+			title={ __( 'Live preview', 'wpxero-text-to-speech' ) }
 			badge={
 				dirty && (
 					<span className="ttsr-admin-preview__badge">
-						{ __( 'Unsaved changes', 'text-to-speech-reader' ) }
+						{ __( 'Unsaved changes', 'wpxero-text-to-speech' ) }
 					</span>
 				)
 			}
@@ -111,7 +111,7 @@ export function PlayerPreview( props: {
 				props.description ??
 				__(
 					'Uses your unsaved changes and this browser’s voices. Visitors hear the voices installed on their own devices.',
-					'text-to-speech-reader'
+					'wpxero-text-to-speech'
 				)
 			}
 			footer={
@@ -122,7 +122,7 @@ export function PlayerPreview( props: {
 							{ draft.voice ||
 								__(
 									'Automatic voice',
-									'text-to-speech-reader'
+									'wpxero-text-to-speech'
 								) }
 						</span>
 					</span>
@@ -134,7 +134,7 @@ export function PlayerPreview( props: {
 						<Icon name="graphic_eq" size={ 16 } />
 						{ sprintf(
 							/* translators: %s: pitch value such as 1.0. */
-							__( 'Pitch %s', 'text-to-speech-reader' ),
+							__( 'Pitch %s', 'wpxero-text-to-speech' ),
 							pitch
 						) }
 					</span>
@@ -145,13 +145,13 @@ export function PlayerPreview( props: {
 				<EmptyState
 					title={ __(
 						'The player script did not load.',
-						'text-to-speech-reader'
+						'wpxero-text-to-speech'
 					) }
 				>
 					<p>
 						{ __(
 							'Another plugin or a browser extension may be blocking scripts on this page.',
-							'text-to-speech-reader'
+							'wpxero-text-to-speech'
 						) }
 					</p>
 				</EmptyState>
@@ -183,14 +183,14 @@ export function PlayerPreview( props: {
 					>
 						<p>
 							{ __(
-								'Text to Speech Reader reads your content aloud with the speech voices built into the visitor’s browser.',
-								'text-to-speech-reader'
+								'WPXERO Text to Speech reads your content aloud with the speech voices built into the visitor’s browser.',
+								'wpxero-text-to-speech'
 							) }
 						</p>
 						<p>
 							{ __(
 								'Nothing is sent to an external service. Choose a voice and a speed, then press the button to listen.',
-								'text-to-speech-reader'
+								'wpxero-text-to-speech'
 							) }
 						</p>
 					</div>

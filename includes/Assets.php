@@ -72,7 +72,7 @@ final class Assets {
 			wp_style_add_data( $handle, 'rtl', 'replace' );
 		}
 		if ( in_array( 'wp-i18n', $asset['dependencies'], true ) ) {
-			wp_set_script_translations( $handle, 'text-to-speech-reader', TTSR_PATH . 'languages' );
+			wp_set_script_translations( $handle, 'wpxero-text-to-speech', TTSR_PATH . 'languages' );
 		}
 	}
 
@@ -129,22 +129,22 @@ final class Assets {
 	public function player_strings() {
 		return array(
 			'ready'            => '',
-			'loading'          => __( 'Loading voices…', 'text-to-speech-reader' ),
-			'playing'          => __( 'Playing', 'text-to-speech-reader' ),
-			'paused'           => __( 'Paused', 'text-to-speech-reader' ),
-			'stopped'          => __( 'Stopped', 'text-to-speech-reader' ),
-			'finished'         => __( 'Finished', 'text-to-speech-reader' ),
-			'empty'            => __( 'There is no text to read here.', 'text-to-speech-reader' ),
-			'unsupported'      => __( 'Your browser does not support text to speech.', 'text-to-speech-reader' ),
-			'error'            => __( 'Speech could not be played in this browser.', 'text-to-speech-reader' ),
-			'voice'            => __( 'Voice', 'text-to-speech-reader' ),
-			'speed'            => __( 'Speed', 'text-to-speech-reader' ),
-			'defaultVoice'     => __( 'Default voice', 'text-to-speech-reader' ),
+			'loading'          => __( 'Loading voices…', 'wpxero-text-to-speech' ),
+			'playing'          => __( 'Playing', 'wpxero-text-to-speech' ),
+			'paused'           => __( 'Paused', 'wpxero-text-to-speech' ),
+			'stopped'          => __( 'Stopped', 'wpxero-text-to-speech' ),
+			'finished'         => __( 'Finished', 'wpxero-text-to-speech' ),
+			'empty'            => __( 'There is no text to read here.', 'wpxero-text-to-speech' ),
+			'unsupported'      => __( 'Your browser does not support text to speech.', 'wpxero-text-to-speech' ),
+			'error'            => __( 'Speech could not be played in this browser.', 'wpxero-text-to-speech' ),
+			'voice'            => __( 'Voice', 'wpxero-text-to-speech' ),
+			'speed'            => __( 'Speed', 'wpxero-text-to-speech' ),
+			'defaultVoice'     => __( 'Default voice', 'wpxero-text-to-speech' ),
 			/* translators: 1: current part number, 2: total number of parts. */
-			'progress'         => __( 'Part %1$d of %2$d', 'text-to-speech-reader' ),
-			'region'           => __( 'Listen to this content', 'text-to-speech-reader' ),
-			'matchingLanguage' => __( 'Matching language', 'text-to-speech-reader' ),
-			'otherLanguages'   => __( 'Other languages', 'text-to-speech-reader' ),
+			'progress'         => __( 'Part %1$d of %2$d', 'wpxero-text-to-speech' ),
+			'region'           => __( 'Listen to this content', 'wpxero-text-to-speech' ),
+			'matchingLanguage' => __( 'Matching language', 'wpxero-text-to-speech' ),
+			'otherLanguages'   => __( 'Other languages', 'wpxero-text-to-speech' ),
 		);
 	}
 }

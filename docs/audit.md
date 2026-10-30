@@ -9,7 +9,7 @@ this project apart from that documentation file.
 
 * `text-to-audio` is GPL-3.0 (`LICENSE.txt`, plugin header `GPL-3.0+`).
 * It vendors `speak-tts` (MIT) under `admin/js/tts/speak-tts/`.
-* Text to Speech Reader does **not** copy source files, markup or styles from the
+* WPXERO Text to Speech does **not** copy source files, markup or styles from the
   reference plugin or from `speak-tts`. It is an independent reimplementation of the
   same product idea, informed by reading the reference code. Both new plugins are
   released under GPL-3.0-or-later so that they remain licence-compatible with the work
@@ -25,8 +25,8 @@ this project apart from that documentation file.
 | Voice / speed selection | Retain and improve: async `voiceschanged` handling, language-based fallback, no hard-coded "Google UK English Female" default | Free |
 | Auto insertion before/after content | Retain and improve: duplicate-render guard, main-query/in-the-loop checks, no feeds/REST/admin | Free |
 | Per-post / tag / category exclusion | Per-post toggle in Free; term rules in Pro | Free + Pro |
-| Shortcodes `[tta_listen_btn]` / `[atlasvoice]` | Reimplement as `[text_to_speech_reader]` (new slug, documented attributes) | Free |
-| Gutenberg block | Reimplement as `text-to-speech-reader/player` with `block.json` + dynamic render | Free |
+| Shortcodes `[tta_listen_btn]` / `[atlasvoice]` | Reimplement as `[wpxero_text_to_speech]` (new slug, documented attributes) | Free |
+| Gutenberg block | Reimplement as `wpxero-text-to-speech/player` with `block.json` + dynamic render | Free |
 | Button customisation (colours, sizes, labels, many "players") | Reimplement as a small set of layouts + CSS custom properties | Layouts 2 in Free, rest in Pro |
 | Read-along highlighting (`highlighter.js`, DOM wrapping) | Reimplement with the CSS Custom Highlight API (no DOM mutation), sentence fallback | Pro |
 | Selection reading (`selection-control.js`) | Reimplement as an unobtrusive "Listen to selection" button | Pro |

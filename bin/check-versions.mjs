@@ -35,7 +35,7 @@ if ( ! readFileSync( readme, 'utf8' ).includes( `= ${ values.header } =` ) ) {
 }
 
 console.log(
-	`Text to Speech Reader ${ values.header } (API ${ constant(
+	`WPXERO Text to Speech ${ values.header } (API ${ constant(
 		main,
 		'TTSR_API_VERSION'
 	) })`

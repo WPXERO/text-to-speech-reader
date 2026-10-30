@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
  */
 final class Admin {
 
-	const PAGE   = 'text-to-speech-reader';
+	const PAGE   = 'wpxero-text-to-speech';
 	const HANDLE = 'ttsr-admin';
 
 	/**
@@ -65,8 +65,8 @@ final class Admin {
 	 */
 	public function add_menu() {
 		$this->hook_suffix = (string) add_menu_page(
-			__( 'Text to Speech Reader', 'text-to-speech-reader' ),
-			__( 'Speech Reader', 'text-to-speech-reader' ),
+			__( 'WPXERO Text to Speech', 'wpxero-text-to-speech' ),
+			__( 'Speech Reader', 'wpxero-text-to-speech' ),
 			'manage_options',
 			self::PAGE,
 			array( $this, 'render_page' ),
@@ -109,10 +109,10 @@ final class Admin {
 		<div class="wrap ttsr-admin-wrap">
 			<hr class="wp-header-end">
 			<div id="ttsr-admin-root">
-				<p class="ttsr-admin-loading"><?php esc_html_e( 'Loading settings…', 'text-to-speech-reader' ); ?></p>
+				<p class="ttsr-admin-loading"><?php esc_html_e( 'Loading settings…', 'wpxero-text-to-speech' ); ?></p>
 			</div>
 			<noscript>
-				<div class="notice notice-error"><p><?php esc_html_e( 'The Text to Speech Reader settings need JavaScript.', 'text-to-speech-reader' ); ?></p></div>
+				<div class="notice notice-error"><p><?php esc_html_e( 'The WPXERO Text to Speech settings need JavaScript.', 'wpxero-text-to-speech' ); ?></p></div>
 			</noscript>
 		</div>
 		<?php
@@ -187,10 +187,10 @@ final class Admin {
 			'placements'   => $options( $this->settings->placements() ),
 			'siteLanguage' => get_bloginfo( 'language' ),
 			'labels'       => array(
-				'listen' => __( 'Listen', 'text-to-speech-reader' ),
-				'pause'  => __( 'Pause', 'text-to-speech-reader' ),
-				'resume' => __( 'Resume', 'text-to-speech-reader' ),
-				'stop'   => __( 'Stop', 'text-to-speech-reader' ),
+				'listen' => __( 'Listen', 'wpxero-text-to-speech' ),
+				'pause'  => __( 'Pause', 'wpxero-text-to-speech' ),
+				'resume' => __( 'Resume', 'wpxero-text-to-speech' ),
+				'stop'   => __( 'Stop', 'wpxero-text-to-speech' ),
 			),
 			'links'        => array(
 				'newPost'    => admin_url( 'post-new.php' ),
@@ -246,9 +246,9 @@ final class Admin {
 		delete_option( Lifecycle::WELCOME_OPTION );
 		printf(
 			'<div class="notice notice-success is-dismissible"><p>%1$s <a href="%2$s">%3$s</a></p></div>',
-			esc_html__( 'Text to Speech Reader is active. A Listen player now appears on your posts.', 'text-to-speech-reader' ),
+			esc_html__( 'WPXERO Text to Speech is active. A Listen player now appears on your posts.', 'wpxero-text-to-speech' ),
 			esc_url( self::url() ),
-			esc_html__( 'Review the settings', 'text-to-speech-reader' )
+			esc_html__( 'Review the settings', 'wpxero-text-to-speech' )
 		);
 	}
 
@@ -261,7 +261,7 @@ final class Admin {
 	public function action_links( $links ) {
 		array_unshift(
 			$links,
-			sprintf( '<a href="%1$s">%2$s</a>', esc_url( self::url() ), esc_html__( 'Settings', 'text-to-speech-reader' ) )
+			sprintf( '<a href="%1$s">%2$s</a>', esc_url( self::url() ), esc_html__( 'Settings', 'wpxero-text-to-speech' ) )
 		);
 		return $links;
 	}

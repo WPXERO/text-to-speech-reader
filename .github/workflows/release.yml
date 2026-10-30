@@ -46,7 +46,7 @@ jobs:
 
       - name: Check the tag matches the plugin version
         run: |
-          version=$(sed -n 's/^[ *]*Version:[[:space:]]*//p' text-to-speech-reader.php | head -n 1 | tr -d '\r')
+          version=$(sed -n 's/^[ *]*Version:[[:space:]]*//p' wpxero-text-to-speech.php | head -n 1 | tr -d '\r')
           if [ "${GITHUB_REF_NAME#v}" != "$version" ]; then
             echo "::error::Tag ${GITHUB_REF_NAME} does not match plugin version ${version}"
             exit 1
@@ -71,7 +71,7 @@ jobs:
       - uses: actions/upload-artifact@v7
         with:
           name: plugin-zip
-          path: dist/text-to-speech-reader.zip
+          path: dist/wpxero-text-to-speech.zip
           if-no-files-found: error
 
   github-release:
@@ -90,9 +90,9 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
         run: |
-          gh release create "$GITHUB_REF_NAME" dist/text-to-speech-reader.zip \
+          gh release create "$GITHUB_REF_NAME" dist/wpxero-text-to-speech.zip \
             --verify-tag \
-            --title "Text to Speech Reader ${GITHUB_REF_NAME#v}" \
+            --title "WPXERO Text to Speech ${GITHUB_REF_NAME#v}" \
             --generate-notes
 
   wordpress-org:
@@ -111,7 +111,7 @@ jobs:
           path: dist
 
       - name: Unpack the release package
-        run: unzip -q dist/text-to-speech-reader.zip -d dist/package
+        run: unzip -q dist/wpxero-text-to-speech.zip -d dist/package
 
       - name: Deploy to WordPress.org
         # 10up/action-wordpress-plugin-deploy 2.3.0, pinned to its commit.
@@ -119,6 +119,6 @@ jobs:
         env:
           SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
           SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
-          SLUG: text-to-speech-reader
-          BUILD_DIR: dist/package/text-to-speech-reader
+          SLUG: wpxero-text-to-speech
+          BUILD_DIR: dist/package/wpxero-text-to-speech
           ASSETS_DIR: .wordpress-org

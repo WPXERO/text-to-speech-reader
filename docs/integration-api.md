@@ -1,6 +1,6 @@
 # Integration API (extension contract)
 
-Text to Speech Reader (the core) exposes a small, versioned contract. Text to
+WPXERO Text to Speech (the core) exposes a small, versioned contract. Text to
 Speech Reader Pro uses only what is listed here and never edits core files.
 Third-party extensions may use it too.
 
@@ -201,7 +201,7 @@ only. TypeScript types are in the core's `src/admin-ui/index.ts` and
 
 ## Block editor
 
-The core registers `text-to-speech-reader/player` (dynamic, rendered by
+The core registers `wpxero-text-to-speech/player` (dynamic, rendered by
 `TTSR\Renderer`) and the `ttsr-document-settings` sidebar panel. Extensions
 add their own `registerPlugin()` panels; they must not register another
 block with the same name.

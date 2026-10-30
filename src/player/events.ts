@@ -76,7 +76,7 @@ export class Events {
 			} catch ( error ) {
 				// An extension's bug must not stop playback.
 				// eslint-disable-next-line no-console
-				console.error( '[Text to Speech Reader]', error );
+				console.error( '[WPXERO Text to Speech]', error );
 			}
 		} );
 	}

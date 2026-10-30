@@ -8,14 +8,14 @@ export function validate( draft: FreeSettings ): FieldErrors< FreeSettings > {
 	if ( draft.auto_insert && draft.post_types.length === 0 ) {
 		errors.post_types = __(
 			'Choose at least one content type, or turn automatic insertion off.',
-			'text-to-speech-reader'
+			'wpxero-text-to-speech'
 		);
 	}
 	for ( const key of [ 'rate', 'pitch' ] as const ) {
 		if ( ! ( draft[ key ] >= 0.5 && draft[ key ] <= 2 ) ) {
 			errors[ key ] = __(
 				'Enter a number between 0.5 and 2.',
-				'text-to-speech-reader'
+				'wpxero-text-to-speech'
 			);
 		}
 	}
@@ -25,7 +25,7 @@ export function validate( draft: FreeSettings ): FieldErrors< FreeSettings > {
 	) {
 		errors.lang = __(
 			'Use a language code such as en-US, or leave it empty.',
-			'text-to-speech-reader'
+			'wpxero-text-to-speech'
 		);
 	}
 	return errors;
@@ -37,18 +37,18 @@ export const freeStore = createSettingsStore< FreeSettings >( {
 	initial: data.settings,
 	validate,
 	messages: {
-		saved: __( 'Settings saved.', 'text-to-speech-reader' ),
+		saved: __( 'Settings saved.', 'wpxero-text-to-speech' ),
 		reset: __(
 			'Settings restored to their defaults.',
-			'text-to-speech-reader'
+			'wpxero-text-to-speech'
 		),
 		invalid: __(
 			'Some settings need attention before they can be saved.',
-			'text-to-speech-reader'
+			'wpxero-text-to-speech'
 		),
 		failed: __(
 			'The settings could not be saved. Check your connection and try again.',
-			'text-to-speech-reader'
+			'wpxero-text-to-speech'
 		),
 	},
 } );

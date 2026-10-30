@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name:       Text to Speech Reader
- * Plugin URI:        https://github.com/WPXERO/text-to-speech-reader
+ * Plugin Name:       WPXERO Text to Speech
+ * Plugin URI:        https://github.com/WPXERO/wpxero-text-to-speech
  * Description:       Adds an accessible "Listen" player that reads posts and pages aloud using the visitor's own browser voices. No accounts, API keys or external services.
  * Version:           1.0.0
  * Requires at least: 6.6
@@ -10,7 +10,7 @@
  * Author URI:        https://github.com/WPXERO
  * License:           GPL-3.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
- * Text Domain:       text-to-speech-reader
+ * Text Domain:       wpxero-text-to-speech
  * Domain Path:       /languages
  *
  * @package TTSR

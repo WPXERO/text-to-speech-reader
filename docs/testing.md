@@ -19,7 +19,7 @@ Each plugin has its own test commands; run them in the plugin's directory.
 restores the original value afterwards. Suites create and delete their own
 posts and restore both plugins' options.
 
-Core (`text-to-speech-reader`):
+Core (`wpxero-text-to-speech`):
 
 1. Core suite – settings defaults/validation, REST permissions and errors,
    automatic insertion and placement, feeds/archives/password protection,
@@ -27,7 +27,7 @@ Core (`text-to-speech-reader`):
    escaping, meta registration. Other active plugins are left as they are;
    it must pass with or without Pro.
 
-Pro (`text-to-speech-reader-pro`):
+Pro (`wpxero-text-to-speech-pro`):
 
 1. The core suite again with Pro active (read from the core checkout), to
    show Pro does not change core behaviour.
@@ -54,7 +54,7 @@ WordPress 7.1.3 (Local), Chrome.
   assertions. All passed.
 * Plugin Check 2.1.0 (`--include-experimental`) on the unzipped packages:
   core – no errors or warnings. Pro – one warning that the required plugin
-  `text-to-speech-reader` is not in the WordPress.org directory (expected
+  `wpxero-text-to-speech` is not in the WordPress.org directory (expected
   until it is published).
 * Browser check after moving to separate plugin directories (Chrome, as an
   administrator): settings screen loads `ttsr-admin-ui`, then Pro's admin

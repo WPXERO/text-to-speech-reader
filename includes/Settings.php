@@ -90,7 +90,7 @@ final class Settings {
 		if ( ! empty( $result['errors'] ) ) {
 			return new WP_Error(
 				'ttsr_invalid_settings',
-				__( 'Some settings could not be saved. Check the highlighted fields.', 'text-to-speech-reader' ),
+				__( 'Some settings could not be saved. Check the highlighted fields.', 'wpxero-text-to-speech' ),
 				array(
 					'status' => 400,
 					'errors' => $result['errors'],
@@ -137,7 +137,7 @@ final class Settings {
 				case 'allow_rate_select':
 				case 'delete_data_on_uninstall':
 					if ( ! is_bool( $value ) && ! in_array( $value, array( 0, 1, '0', '1' ), true ) ) {
-						$errors[ $key ] = __( 'Must be on or off.', 'text-to-speech-reader' );
+						$errors[ $key ] = __( 'Must be on or off.', 'wpxero-text-to-speech' );
 						break;
 					}
 					$settings[ $key ] = (bool) $value;
@@ -146,13 +146,13 @@ final class Settings {
 				case 'post_types':
 					$allowed = array_merge( array_keys( $this->eligible_post_types() ), (array) $stored['post_types'] );
 					if ( ! is_array( $value ) ) {
-						$errors[ $key ] = __( 'Choose content types from the list.', 'text-to-speech-reader' );
+						$errors[ $key ] = __( 'Choose content types from the list.', 'wpxero-text-to-speech' );
 						break;
 					}
 					$clean = array();
 					foreach ( $value as $post_type ) {
 						if ( ! is_string( $post_type ) || ! in_array( $post_type, $allowed, true ) ) {
-							$errors[ $key ] = __( 'One of the selected content types does not exist.', 'text-to-speech-reader' );
+							$errors[ $key ] = __( 'One of the selected content types does not exist.', 'wpxero-text-to-speech' );
 							break 2;
 						}
 						$clean[] = $post_type;
@@ -162,7 +162,7 @@ final class Settings {
 
 				case 'placement':
 					if ( ! is_string( $value ) || ( ! array_key_exists( $value, $this->placements() ) && $value !== $stored['placement'] ) ) {
-						$errors[ $key ] = __( 'Choose a placement from the list.', 'text-to-speech-reader' );
+						$errors[ $key ] = __( 'Choose a placement from the list.', 'wpxero-text-to-speech' );
 						break;
 					}
 					$settings[ $key ] = $value;
@@ -170,7 +170,7 @@ final class Settings {
 
 				case 'layout':
 					if ( ! is_string( $value ) || ( ! array_key_exists( $value, $this->layouts() ) && $value !== $stored['layout'] ) ) {
-						$errors[ $key ] = __( 'Choose a layout from the list.', 'text-to-speech-reader' );
+						$errors[ $key ] = __( 'Choose a layout from the list.', 'wpxero-text-to-speech' );
 						break;
 					}
 					$settings[ $key ] = $value;
@@ -182,7 +182,7 @@ final class Settings {
 					$max = 2.0;
 					if ( ! is_numeric( $value ) || $value < $min || $value > $max ) {
 						/* translators: 1: minimum value, 2: maximum value. */
-						$errors[ $key ] = sprintf( __( 'Enter a number between %1$s and %2$s.', 'text-to-speech-reader' ), $min, $max );
+						$errors[ $key ] = sprintf( __( 'Enter a number between %1$s and %2$s.', 'wpxero-text-to-speech' ), $min, $max );
 						break;
 					}
 					$settings[ $key ] = round( (float) $value, 2 );
@@ -190,7 +190,7 @@ final class Settings {
 
 				case 'voice':
 					if ( ! is_string( $value ) || strlen( $value ) > 200 ) {
-						$errors[ $key ] = __( 'Choose a voice from the list.', 'text-to-speech-reader' );
+						$errors[ $key ] = __( 'Choose a voice from the list.', 'wpxero-text-to-speech' );
 						break;
 					}
 					$settings[ $key ] = sanitize_text_field( $value );
@@ -198,7 +198,7 @@ final class Settings {
 
 				case 'lang':
 					if ( ! is_string( $value ) || ( '' !== $value && ! self::is_language_tag( $value ) ) ) {
-						$errors[ $key ] = __( 'Use a language code such as en-US, or leave it empty.', 'text-to-speech-reader' );
+						$errors[ $key ] = __( 'Use a language code such as en-US, or leave it empty.', 'wpxero-text-to-speech' );
 						break;
 					}
 					$settings[ $key ] = $value;
@@ -206,7 +206,7 @@ final class Settings {
 
 				default:
 					/* translators: %s: setting name. */
-					$errors[ (string) $key ] = sprintf( __( 'Unknown setting "%s".', 'text-to-speech-reader' ), sanitize_key( (string) $key ) );
+					$errors[ (string) $key ] = sprintf( __( 'Unknown setting "%s".', 'wpxero-text-to-speech' ), sanitize_key( (string) $key ) );
 			}
 		}
 
@@ -266,8 +266,8 @@ final class Settings {
 	 */
 	public function layouts() {
 		$layouts = array(
-			'standard' => __( 'Standard', 'text-to-speech-reader' ),
-			'button'   => __( 'Button only', 'text-to-speech-reader' ),
+			'standard' => __( 'Standard', 'wpxero-text-to-speech' ),
+			'button'   => __( 'Button only', 'wpxero-text-to-speech' ),
 		);
 		/**
 		 * Filters the available player layouts.
@@ -289,8 +289,8 @@ final class Settings {
 	 */
 	public function placements() {
 		$placements = array(
-			'before' => __( 'Before the content', 'text-to-speech-reader' ),
-			'after'  => __( 'After the content', 'text-to-speech-reader' ),
+			'before' => __( 'Before the content', 'wpxero-text-to-speech' ),
+			'after'  => __( 'After the content', 'wpxero-text-to-speech' ),
 		);
 		/**
 		 * Filters the automatic-insertion placements.

@@ -24,11 +24,11 @@ export function Player( { context }: { context: AdminContext } ) {
 		<>
 			<SectionHeader
 				id="ttsr-section-title"
-				eyebrow={ __( 'Settings', 'text-to-speech-reader' ) }
-				title={ __( 'Player', 'text-to-speech-reader' ) }
+				eyebrow={ __( 'Settings', 'wpxero-text-to-speech' ) }
+				title={ __( 'Player', 'wpxero-text-to-speech' ) }
 				description={ __(
 					'Choose how the player looks and which controls visitors get.',
-					'text-to-speech-reader'
+					'wpxero-text-to-speech'
 				) }
 			/>
 
@@ -36,21 +36,21 @@ export function Player( { context }: { context: AdminContext } ) {
 				<StatusNotice status="warning">
 					{ __(
 						'The saved layout is not available, so visitors see the Standard layout. It was probably provided by an extension that is no longer active.',
-						'text-to-speech-reader'
+						'wpxero-text-to-speech'
 					) }
 				</StatusNotice>
 			) }
 
 			<SettingsPanel
 				icon="dashboard_customize"
-				title={ __( 'Layout', 'text-to-speech-reader' ) }
+				title={ __( 'Layout', 'wpxero-text-to-speech' ) }
 				description={ __(
 					'Standard shows the controls in a panel. Button only shows a single Listen button.',
-					'text-to-speech-reader'
+					'wpxero-text-to-speech'
 				) }
 			>
 				<ChoiceField
-					label={ __( 'Layout', 'text-to-speech-reader' ) }
+					label={ __( 'Layout', 'wpxero-text-to-speech' ) }
 					indicator="check"
 					hideLabel
 					minWidth={ 138 }
@@ -72,16 +72,16 @@ export function Player( { context }: { context: AdminContext } ) {
 
 			<SettingsPanel
 				icon="tune"
-				title={ __( 'Visitor controls', 'text-to-speech-reader' ) }
+				title={ __( 'Visitor controls', 'wpxero-text-to-speech' ) }
 				description={ __(
 					'Visitors’ choices are remembered in their own browser only.',
-					'text-to-speech-reader'
+					'wpxero-text-to-speech'
 				) }
 			>
 				<ToggleField
 					label={ __(
 						'Let visitors choose a voice',
-						'text-to-speech-reader'
+						'wpxero-text-to-speech'
 					) }
 					value={ draft.allow_voice_select }
 					onChange={ ( value ) =>
@@ -90,13 +90,13 @@ export function Player( { context }: { context: AdminContext } ) {
 					error={ errors.allow_voice_select }
 					help={ __(
 						'Lists the voices installed in the visitor’s browser.',
-						'text-to-speech-reader'
+						'wpxero-text-to-speech'
 					) }
 				/>
 				<ToggleField
 					label={ __(
 						'Let visitors choose the speed',
-						'text-to-speech-reader'
+						'wpxero-text-to-speech'
 					) }
 					value={ draft.allow_rate_select }
 					onChange={ ( value ) =>

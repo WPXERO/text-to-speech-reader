@@ -76,26 +76,26 @@ export function Overview( { context }: { context: AdminContext } ) {
 						/* translators: 1: list of content types, 2: placement such as "Before the content". */
 						__(
 							'The player is added to: %1$s (%2$s)',
-							'text-to-speech-reader'
+							'wpxero-text-to-speech'
 						),
 						typeLabels.join( ', ' ),
 						placement.toLowerCase()
 					)
 				: __(
 						'The player is not added automatically',
-						'text-to-speech-reader'
+						'wpxero-text-to-speech'
 					),
 			detail: autoOn
 				? __(
 						'Single posts of these types show the player unless the post opts out.',
-						'text-to-speech-reader'
+						'wpxero-text-to-speech'
 					)
 				: __(
 						'Turn on automatic insertion under General, or place the player by hand with the block or shortcode.',
-						'text-to-speech-reader'
+						'wpxero-text-to-speech'
 					),
 			action: {
-				label: __( 'Change', 'text-to-speech-reader' ),
+				label: __( 'Change', 'wpxero-text-to-speech' ),
 				onClick: () => context.navigate( 'general' ),
 			},
 		},
@@ -103,20 +103,20 @@ export function Overview( { context }: { context: AdminContext } ) {
 			done: played,
 			title: __(
 				'Try the player in this browser',
-				'text-to-speech-reader'
+				'wpxero-text-to-speech'
 			),
 			detail: supported
 				? __(
 						'Press Listen in the preview to hear the current settings.',
-						'text-to-speech-reader'
+						'wpxero-text-to-speech'
 					)
 				: __(
 						'This browser has no speech support, so the preview cannot play here. Try another browser.',
-						'text-to-speech-reader'
+						'wpxero-text-to-speech'
 					),
 			action: supported
 				? {
-						label: __( 'Try it', 'text-to-speech-reader' ),
+						label: __( 'Try it', 'wpxero-text-to-speech' ),
 						icon: 'play_arrow',
 						onClick: playPreview,
 					}
@@ -124,21 +124,21 @@ export function Overview( { context }: { context: AdminContext } ) {
 		},
 		{
 			done: visited,
-			title: __( 'Check a published post', 'text-to-speech-reader' ),
+			title: __( 'Check a published post', 'wpxero-text-to-speech' ),
 			detail: data.links.samplePost
 				? __(
 						'Open your latest post and listen as a visitor would.',
-						'text-to-speech-reader'
+						'wpxero-text-to-speech'
 					)
 				: __(
 						'Publish a post to see the player on your site.',
-						'text-to-speech-reader'
+						'wpxero-text-to-speech'
 					),
 			action: data.links.samplePost
 				? {
 						label: __(
 							'View latest post',
-							'text-to-speech-reader'
+							'wpxero-text-to-speech'
 						),
 						icon: 'open_in_new',
 						href: data.links.samplePost,
@@ -149,7 +149,7 @@ export function Overview( { context }: { context: AdminContext } ) {
 						},
 					}
 				: {
-						label: __( 'Write a post', 'text-to-speech-reader' ),
+						label: __( 'Write a post', 'wpxero-text-to-speech' ),
 						icon: 'edit_square',
 						href: data.links.newPost,
 					},
@@ -160,17 +160,17 @@ export function Overview( { context }: { context: AdminContext } ) {
 	const shortcuts: { id: string; label: string; icon: IconName }[] = [
 		{
 			id: 'player',
-			label: __( 'Player layout', 'text-to-speech-reader' ),
+			label: __( 'Player layout', 'wpxero-text-to-speech' ),
 			icon: 'dashboard_customize',
 		},
 		{
 			id: 'voice',
-			label: __( 'Voice and speed', 'text-to-speech-reader' ),
+			label: __( 'Voice and speed', 'wpxero-text-to-speech' ),
 			icon: 'record_voice_over',
 		},
 		{
 			id: 'help',
-			label: __( 'Shortcode and block help', 'text-to-speech-reader' ),
+			label: __( 'Shortcode and block help', 'wpxero-text-to-speech' ),
 			icon: 'code',
 		},
 	];
@@ -179,11 +179,11 @@ export function Overview( { context }: { context: AdminContext } ) {
 		<>
 			<SectionHeader
 				id="ttsr-section-title"
-				eyebrow={ __( 'Get started', 'text-to-speech-reader' ) }
-				title={ __( 'Overview', 'text-to-speech-reader' ) }
+				eyebrow={ __( 'Get started', 'wpxero-text-to-speech' ) }
+				title={ __( 'Overview', 'wpxero-text-to-speech' ) }
 				description={ __(
-					'Text to Speech Reader adds a Listen player that reads your content aloud with the speech voices built into each visitor’s browser. No account, API key or external service is involved.',
-					'text-to-speech-reader'
+					'WPXERO Text to Speech adds a Listen player that reads your content aloud with the speech voices built into each visitor’s browser. No account, API key or external service is involved.',
+					'wpxero-text-to-speech'
 				) }
 			/>
 
@@ -191,14 +191,14 @@ export function Overview( { context }: { context: AdminContext } ) {
 				<div className="ttsr-ui-panel__intro">
 					<div className="ttsr-ui-panel__heading">
 						<h3 className="ttsr-ui-panel__title">
-							{ __( 'Setup', 'text-to-speech-reader' ) }
+							{ __( 'Setup', 'wpxero-text-to-speech' ) }
 						</h3>
 						<p className="ttsr-ui-help">
 							{ sprintf(
 								/* translators: 1: completed steps, 2: total steps. */
 								__(
 									'%1$d of %2$d done',
-									'text-to-speech-reader'
+									'wpxero-text-to-speech'
 								),
 								done,
 								steps.length
@@ -208,7 +208,7 @@ export function Overview( { context }: { context: AdminContext } ) {
 					<div
 						className="ttsr-admin-setup__progress"
 						role="progressbar"
-						aria-label={ __( 'Setup', 'text-to-speech-reader' ) }
+						aria-label={ __( 'Setup', 'wpxero-text-to-speech' ) }
 						aria-valuemin={ 0 }
 						aria-valuemax={ steps.length }
 						aria-valuenow={ done }
@@ -241,11 +241,11 @@ export function Overview( { context }: { context: AdminContext } ) {
 										{ step.done
 											? __(
 													'Done:',
-													'text-to-speech-reader'
+													'wpxero-text-to-speech'
 												)
 											: __(
 													'To do:',
-													'text-to-speech-reader'
+													'wpxero-text-to-speech'
 												) }
 									</span>{ ' ' }
 									{ step.title }
@@ -271,7 +271,7 @@ export function Overview( { context }: { context: AdminContext } ) {
 			</section>
 
 			<h3 className="ttsr-admin__group-label">
-				{ __( 'Shortcuts', 'text-to-speech-reader' ) }
+				{ __( 'Shortcuts', 'wpxero-text-to-speech' ) }
 			</h3>
 			<div className="ttsr-admin-shortcuts">
 				{ shortcuts.map( ( shortcut ) => (
@@ -291,7 +291,7 @@ export function Overview( { context }: { context: AdminContext } ) {
 			</div>
 
 			<h3 className="ttsr-admin__group-label">
-				{ __( 'Active extensions', 'text-to-speech-reader' ) }
+				{ __( 'Active extensions', 'wpxero-text-to-speech' ) }
 			</h3>
 			{ data.extensions.length === 0 && (
 				<div className="ttsr-admin-extension">
@@ -302,13 +302,13 @@ export function Overview( { context }: { context: AdminContext } ) {
 						<span className="ttsr-admin-extension__name">
 							{ __(
 								'No extensions active',
-								'text-to-speech-reader'
+								'wpxero-text-to-speech'
 							) }
 						</span>
 						<span className="ttsr-ui-help">
 							{ __(
 								'Extensions add their settings here when they are active.',
-								'text-to-speech-reader'
+								'wpxero-text-to-speech'
 							) }
 						</span>
 					</div>
@@ -328,7 +328,7 @@ export function Overview( { context }: { context: AdminContext } ) {
 						</span>
 					</div>
 					<StatusPill tone="success">
-						{ __( 'Active', 'text-to-speech-reader' ) }
+						{ __( 'Active', 'wpxero-text-to-speech' ) }
 					</StatusPill>
 				</div>
 			) ) }

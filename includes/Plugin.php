@@ -107,7 +107,7 @@ final class Plugin {
 	 */
 	public function announce() {
 		/**
-		 * Fires once Text to Speech Reader has registered its hooks.
+		 * Fires once WPXERO Text to Speech has registered its hooks.
 		 *
 		 * Extensions should initialise from this action and check
 		 * TTSR_API_VERSION before relying on any other part of the contract.

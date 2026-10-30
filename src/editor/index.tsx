@@ -1,5 +1,5 @@
 /**
- * "Text to Speech Reader" panel in the block editor's document sidebar.
+ * "WPXERO Text to Speech" panel in the block editor's document sidebar.
  */
 import { ToggleControl } from '@wordpress/components';
 import { useEntityProp } from '@wordpress/core-data';
@@ -39,13 +39,13 @@ function Panel() {
 	return (
 		<PluginDocumentSettingPanel
 			name="ttsr-document-settings"
-			title={ __( 'Text to Speech Reader', 'text-to-speech-reader' ) }
+			title={ __( 'WPXERO Text to Speech', 'wpxero-text-to-speech' ) }
 		>
 			<ToggleControl
 				__nextHasNoMarginBottom
 				label={ __(
 					'Show the automatic player',
-					'text-to-speech-reader'
+					'wpxero-text-to-speech'
 				) }
 				checked={ ! disabled }
 				disabled={ ! data.autoInsert }
@@ -56,11 +56,11 @@ function Panel() {
 					data.autoInsert
 						? __(
 								'A Text to Speech Player block or shortcode in this post is shown either way.',
-								'text-to-speech-reader'
+								'wpxero-text-to-speech'
 							)
 						: __(
 								'Automatic insertion is turned off in the plugin settings.',
-								'text-to-speech-reader'
+								'wpxero-text-to-speech'
 							)
 				}
 			/>

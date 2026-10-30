@@ -2,89 +2,92 @@
 # This file is distributed under the GPL-3.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Text to Speech Reader 1.0.0\n"
+"Project-Id-Version: WPXERO Text to Speech 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-26T23:46:31+00:00\n"
+"POT-Creation-Date: 2026-10-30T06:28:16+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
-"X-Domain: text-to-speech-reader\n"
+"X-Domain: wpxero-text-to-speech\n"
 
 #. Plugin Name of the plugin
-#: text-to-speech-reader.php
-#: includes/Admin.php:67
-#: build/admin.js:6
+#: wpxero-text-to-speech.php
+#: includes/Admin.php:68
+#: build/admin.js:9
 #: build/editor.js:1
-msgid "Text to Speech Reader"
+msgid "WPXERO Text to Speech"
 msgstr ""
 
 #. Plugin URI of the plugin
-#: text-to-speech-reader.php
-msgid "https://github.com/WPXERO/text-to-speech-reader"
+#: wpxero-text-to-speech.php
+msgid "https://github.com/WPXERO/wpxero-text-to-speech"
 msgstr ""
 
 #. Description of the plugin
-#: text-to-speech-reader.php
+#: wpxero-text-to-speech.php
 msgid "Adds an accessible \"Listen\" player that reads posts and pages aloud using the visitor's own browser voices. No accounts, API keys or external services."
 msgstr ""
 
 #. Author of the plugin
-#: text-to-speech-reader.php
+#: wpxero-text-to-speech.php
 msgid "WPXERO"
 msgstr ""
 
 #. Author URI of the plugin
-#: text-to-speech-reader.php
+#: wpxero-text-to-speech.php
 msgid "https://github.com/WPXERO"
 msgstr ""
 
-#: includes/Admin.php:68
+#: includes/Admin.php:69
 msgid "Speech Reader"
 msgstr ""
 
-#: includes/Admin.php:97
+#: includes/Admin.php:112
 msgid "Loading settings…"
 msgstr ""
 
-#: includes/Admin.php:100
-msgid "The Text to Speech Reader settings need JavaScript."
+#: includes/Admin.php:115
+msgid "The WPXERO Text to Speech settings need JavaScript."
 msgstr ""
 
-#: includes/Admin.php:175
+#: includes/Admin.php:190
 #: includes/Renderer.php:126
 #: build/block.js:1
 msgid "Listen"
 msgstr ""
 
-#: includes/Admin.php:176
+#: includes/Admin.php:191
 #: includes/Renderer.php:127
 msgid "Pause"
 msgstr ""
 
-#: includes/Admin.php:177
+#: includes/Admin.php:192
 #: includes/Renderer.php:128
 msgid "Resume"
 msgstr ""
 
-#: includes/Admin.php:178
+#: includes/Admin.php:193
 #: includes/Renderer.php:129
 msgid "Stop"
 msgstr ""
 
-#: includes/Admin.php:234
-msgid "Text to Speech Reader is active. A Listen player now appears on your posts."
+#: includes/Admin.php:249
+msgid "WPXERO Text to Speech is active. A Listen player now appears on your posts."
 msgstr ""
 
-#: includes/Admin.php:236
+#: includes/Admin.php:251
 msgid "Review the settings"
 msgstr ""
 
-#: includes/Admin.php:249
+#: includes/Admin.php:264
+#: build/admin.js:2
+#: build/admin.js:5
 #: build/admin.js:6
+#: build/admin.js:9
 msgid "Settings"
 msgstr ""
 
@@ -190,7 +193,7 @@ msgid "Choose a voice from the list."
 msgstr ""
 
 #: includes/Settings.php:201
-#: build/admin.js:1
+#: build/admin.js:2
 msgid "Use a language code such as en-US, or leave it empty."
 msgstr ""
 
@@ -220,6 +223,14 @@ msgstr ""
 msgid "Error:"
 msgstr ""
 
+#: build/admin-ui.js:1
+msgid "Decrease"
+msgstr ""
+
+#: build/admin-ui.js:1
+msgid "Increase"
+msgstr ""
+
 #. translators: %s: setting name, such as "Accent colour".
 #: build/admin-ui.js:2
 #, js-format
@@ -231,26 +242,47 @@ msgid "Use default"
 msgstr ""
 
 #: build/admin-ui.js:2
+msgid "Dismiss"
+msgstr ""
+
+#: build/admin-ui.js:2
 msgid "Cancel"
+msgstr ""
+
+#: build/admin-ui.js:2
+msgid "Settings saved"
 msgstr ""
 
 #: build/admin-ui.js:2
 msgid "Saving…"
 msgstr ""
 
-#: build/admin-ui.js:2
-msgid "Unsaved changes"
+#. translators: %d: number of changed settings.
+#: build/admin-ui.js:3
+#, js-format
+msgid "%d unsaved change"
+msgid_plural "%d unsaved changes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: build/admin-ui.js:3
+msgid "Changes saved"
 msgstr ""
 
-#: build/admin-ui.js:2
+#: build/admin-ui.js:3
 msgid "All changes saved"
 msgstr ""
 
-#: build/admin-ui.js:2
+#: build/admin-ui.js:3
+#: build/admin.js:2
+msgid "Settings restored to their defaults."
+msgstr ""
+
+#: build/admin-ui.js:3
 msgid "Discard changes"
 msgstr ""
 
-#: build/admin-ui.js:2
+#: build/admin-ui.js:3
 msgid "Save changes"
 msgstr ""
 
@@ -263,7 +295,11 @@ msgid "Player preview"
 msgstr ""
 
 #: build/admin.js:1
-msgid "Preview"
+msgid "Live preview"
+msgstr ""
+
+#: build/admin.js:1
+msgid "Unsaved changes"
 msgstr ""
 
 #: build/admin.js:1
@@ -271,447 +307,523 @@ msgid "Uses your unsaved changes and this browser’s voices. Visitors hear the 
 msgstr ""
 
 #: build/admin.js:1
+msgid "Automatic voice"
+msgstr ""
+
+#. translators: %s: pitch value such as 1.0.
+#: build/admin.js:2
+#, js-format
+msgid "Pitch %s"
+msgstr ""
+
+#: build/admin.js:2
 msgid "The player script did not load."
 msgstr ""
 
-#: build/admin.js:1
+#: build/admin.js:2
 msgid "Another plugin or a browser extension may be blocking scripts on this page."
 msgstr ""
 
-#: build/admin.js:1
-msgid "Text to Speech Reader reads your content aloud with the speech voices built into the visitor’s browser."
+#: build/admin.js:2
+msgid "WPXERO Text to Speech reads your content aloud with the speech voices built into the visitor’s browser."
 msgstr ""
 
-#: build/admin.js:1
+#: build/admin.js:2
 msgid "Nothing is sent to an external service. Choose a voice and a speed, then press the button to listen."
 msgstr ""
 
-#: build/admin.js:1
+#: build/admin.js:2
 msgid "Choose at least one content type, or turn automatic insertion off."
 msgstr ""
 
-#: build/admin.js:1
+#: build/admin.js:2
 msgid "Enter a number between 0.5 and 2."
 msgstr ""
 
-#: build/admin.js:1
+#: build/admin.js:2
 msgid "Settings saved."
 msgstr ""
 
-#: build/admin.js:1
-msgid "Settings restored to their defaults."
-msgstr ""
-
-#: build/admin.js:1
+#: build/admin.js:2
 msgid "Some settings need attention before they can be saved."
 msgstr ""
 
-#: build/admin.js:1
+#: build/admin.js:2
 msgid "The settings could not be saved. Check your connection and try again."
 msgstr ""
 
-#: build/admin.js:1
-#: build/admin.js:6
+#: build/admin.js:2
+#: build/admin.js:9
 msgid "General"
 msgstr ""
 
-#: build/admin.js:1
+#: build/admin.js:2
 msgid "Choose where the player appears automatically. You can also place it by hand with the block or the shortcode."
 msgstr ""
 
-#: build/admin.js:1
+#: build/admin.js:2
 msgid "Automatic insertion"
 msgstr ""
 
-#: build/admin.js:1
+#: build/admin.js:2
 msgid "Adds the player to the main content of single posts and pages. It is never added to archives, feeds or excerpts."
 msgstr ""
 
-#: build/admin.js:1
+#: build/admin.js:2
 msgid "Add the player automatically"
 msgstr ""
 
-#: build/admin.js:1
-msgid "Individual posts can opt out from the “Text to Speech Reader” panel in the editor."
+#: build/admin.js:2
+msgid "Individual posts can opt out from the “WPXERO Text to Speech” panel in the editor."
 msgstr ""
 
-#: build/admin.js:1
+#: build/admin.js:2
 msgid "Content types"
 msgstr ""
 
-#: build/admin.js:1
+#: build/admin.js:2
 msgid "Placement"
 msgstr ""
 
-#: build/admin.js:1
+#: build/admin.js:2
 msgid "What is read"
 msgstr ""
 
-#: build/admin.js:1
+#: build/admin.js:2
 msgid "Scripts, forms, navigation, hidden elements and the player itself are always skipped."
 msgstr ""
 
-#: build/admin.js:1
+#: build/admin.js:2
 #: build/block.js:1
 msgid "Read the title first"
 msgstr ""
 
-#: build/admin.js:1
+#: build/admin.js:2
 msgid "Data"
 msgstr ""
 
-#: build/admin.js:1
+#: build/admin.js:2
 msgid "Settings are kept when the plugin is deactivated or updated."
 msgstr ""
 
-#: build/admin.js:1
+#: build/admin.js:2
 msgid "Delete settings when the plugin is deleted"
 msgstr ""
 
-#: build/admin.js:1
+#: build/admin.js:2
 msgid "Removes this plugin’s settings and per-post options when you delete it from the Plugins screen."
 msgstr ""
 
-#: build/admin.js:1
+#: build/admin.js:2
 msgid "Restore defaults"
 msgstr ""
 
-#: build/admin.js:1
-msgid "All Text to Speech Reader settings return to their defaults. Per-post choices are kept."
+#: build/admin.js:2
+msgid "All WPXERO Text to Speech settings return to their defaults. Per-post choices are kept."
 msgstr ""
 
 #. translators: %s: internal name of an option that is not currently available.
-#: build/admin.js:2
+#: build/admin.js:3
 #, js-format
 msgid "Unavailable: %s"
 msgstr ""
 
-#: build/admin.js:2
-#: build/admin.js:6
-msgid "Help"
+#: build/admin.js:3
+msgid "Copied"
 msgstr ""
 
-#: build/admin.js:2
-msgid "Placing the player by hand, and what to expect from browser speech."
+#: build/admin.js:3
+msgid "Copy"
 msgstr ""
 
-#: build/admin.js:2
-msgid "Block"
-msgstr ""
-
-#: build/admin.js:2
-msgid "In the block editor, add the “Text to Speech Player” block where the player should appear. Its sidebar lets you change the layout and whether the title is read. A post that contains the block does not also get the automatic player."
-msgstr ""
-
-#: build/admin.js:2
-msgid "Shortcode"
-msgstr ""
-
-#: build/admin.js:2
-msgid "Add the shortcode to any post, page or widget area that supports shortcodes. The player reads the article that contains it."
-msgstr ""
-
-#: build/admin.js:2
-msgid "Attribute"
-msgstr ""
-
-#: build/admin.js:2
-msgid "Values"
-msgstr ""
-
-#: build/admin.js:2
+#: build/admin.js:3
 msgid "yes or no — read the post title first"
 msgstr ""
 
-#: build/admin.js:2
+#: build/admin.js:3
 msgid "a language code such as en-GB"
 msgstr ""
 
-#: build/admin.js:2
+#: build/admin.js:3
 msgid "speed from 0.5 to 2"
 msgstr ""
 
-#: build/admin.js:2
+#: build/admin.js:3
+#: build/admin.js:9
+msgid "Resources"
+msgstr ""
+
+#: build/admin.js:3
+#: build/admin.js:9
+msgid "Help"
+msgstr ""
+
+#: build/admin.js:3
+msgid "Placing the player by hand, and what to expect from browser speech."
+msgstr ""
+
+#: build/admin.js:3
+msgid "Block"
+msgstr ""
+
+#: build/admin.js:3
+msgid "In the block editor, add the “Text to Speech Player” block where the player should appear. Its sidebar lets you change the layout and whether the title is read. A post that contains the block does not also get the automatic player."
+msgstr ""
+
+#: build/admin.js:3
+msgid "Shortcode"
+msgstr ""
+
+#: build/admin.js:3
+msgid "Add the shortcode to any post, page or widget area that supports shortcodes. The player reads the article that contains it."
+msgstr ""
+
+#: build/admin.js:3
+msgid "Attribute"
+msgstr ""
+
+#: build/admin.js:3
+msgid "Values"
+msgstr ""
+
+#: build/admin.js:3
 msgid "Invalid values are ignored and the global settings are used instead."
 msgstr ""
 
-#: build/admin.js:2
+#: build/admin.js:3
 msgid "Browsers and voices"
 msgstr ""
 
-#: build/admin.js:2
+#: build/admin.js:3
 msgid "Speech uses the Web Speech API built into the browser. Voices, languages and quality depend on the visitor’s operating system and browser."
 msgstr ""
 
-#: build/admin.js:2
+#: build/admin.js:3
 msgid "Some in-app browsers and privacy-focused browsers have no speech support. The player then explains that instead of showing controls that do nothing."
 msgstr ""
 
-#: build/admin.js:2
+#: build/admin.js:3
 msgid "Some browsers stop speaking when the tab is in the background or the screen locks."
 msgstr ""
 
-#: build/admin.js:2
+#: build/admin.js:3
 msgid "Pausing remembers the last word the browser reported. Voices that do not report word positions resume from the start of the current sentence."
 msgstr ""
 
-#: build/admin.js:2
+#: build/admin.js:3
 msgid "Troubleshooting"
 msgstr ""
 
-#: build/admin.js:2
+#: build/admin.js:3
 msgid "No player on a post: check that its content type is selected under General, and that the post has not opted out in the editor sidebar."
 msgstr ""
 
-#: build/admin.js:2
+#: build/admin.js:3
 msgid "“There is no text to read here”: the theme may place the content outside the area the player reads. Add the block or shortcode inside the content instead."
 msgstr ""
 
-#: build/admin.js:2
+#: build/admin.js:3
 msgid "No sound: confirm the device volume and that the browser has a voice for the reading language."
 msgstr ""
 
-#: build/admin.js:2
+#: build/admin.js:3
 msgid "Privacy"
 msgstr ""
 
-#: build/admin.js:2
+#: build/admin.js:3
 msgid "The plugin makes no external requests and collects no analytics. Text is spoken by the browser on the visitor’s device; note that some browser vendors provide online voices that process text on their own servers. Visitors’ voice and speed choices are stored only in their browser’s local storage."
 msgstr ""
 
-#: build/admin.js:2
-msgid "Done:"
-msgstr ""
-
-#: build/admin.js:2
-msgid "To do:"
-msgstr ""
-
 #. translators: 1: list of content types, 2: placement such as "Before the content".
-#: build/admin.js:3
+#: build/admin.js:4
 #, js-format
 msgid "The player is added to: %1$s (%2$s)"
 msgstr ""
 
-#: build/admin.js:3
-msgid "Automatic insertion is off"
+#: build/admin.js:4
+msgid "The player is not added automatically"
 msgstr ""
 
-#: build/admin.js:3
+#: build/admin.js:4
 msgid "Single posts of these types show the player unless the post opts out."
 msgstr ""
 
-#: build/admin.js:3
-msgid "Turn it on, or add the Text to Speech Player block or the shortcode where you want it."
+#: build/admin.js:4
+msgid "Turn on automatic insertion under General, or place the player by hand with the block or shortcode."
 msgstr ""
 
-#: build/admin.js:3
+#: build/admin.js:4
 msgid "Change"
 msgstr ""
 
-#: build/admin.js:3
+#: build/admin.js:4
 msgid "Try the player in this browser"
 msgstr ""
 
-#: build/admin.js:3
-msgid "Press Listen in the preview below to hear the current settings."
+#: build/admin.js:4
+msgid "Press Listen in the preview to hear the current settings."
 msgstr ""
 
-#: build/admin.js:3
+#: build/admin.js:4
 msgid "This browser has no speech support, so the preview cannot play here. Try another browser."
 msgstr ""
 
-#: build/admin.js:3
+#: build/admin.js:4
+msgid "Try it"
+msgstr ""
+
+#: build/admin.js:4
 msgid "Check a published post"
 msgstr ""
 
-#: build/admin.js:3
+#: build/admin.js:4
 msgid "Open your latest post and listen as a visitor would."
 msgstr ""
 
-#: build/admin.js:3
+#: build/admin.js:4
 msgid "Publish a post to see the player on your site."
 msgstr ""
 
-#: build/admin.js:3
+#: build/admin.js:4
+#: build/admin.js:10
 msgid "View latest post"
 msgstr ""
 
-#: build/admin.js:3
+#: build/admin.js:4
+#: build/admin.js:10
 msgid "Write a post"
 msgstr ""
 
-#: build/admin.js:3
-#: build/admin.js:6
-msgid "Overview"
-msgstr ""
-
-#: build/admin.js:3
-msgid "Text to Speech Reader adds a Listen player that reads your content aloud with the speech voices built into each visitor’s browser. No account, API key or external service is involved."
-msgstr ""
-
-#: build/admin.js:3
-msgid "Setup"
-msgstr ""
-
-#: build/admin.js:3
-msgid "Shortcuts"
-msgstr ""
-
-#: build/admin.js:3
+#: build/admin.js:4
 msgid "Player layout"
 msgstr ""
 
-#: build/admin.js:3
+#: build/admin.js:4
 msgid "Voice and speed"
 msgstr ""
 
-#: build/admin.js:3
+#: build/admin.js:4
 msgid "Shortcode and block help"
 msgstr ""
 
-#: build/admin.js:3
+#: build/admin.js:4
+msgid "Get started"
+msgstr ""
+
+#: build/admin.js:4
+#: build/admin.js:9
+msgid "Overview"
+msgstr ""
+
+#: build/admin.js:4
+msgid "WPXERO Text to Speech adds a Listen player that reads your content aloud with the speech voices built into each visitor’s browser. No account, API key or external service is involved."
+msgstr ""
+
+#: build/admin.js:4
+#: build/admin.js:5
+msgid "Setup"
+msgstr ""
+
+#. translators: 1: completed steps, 2: total steps.
+#: build/admin.js:5
+#, js-format
+msgid "%1$d of %2$d done"
+msgstr ""
+
+#: build/admin.js:5
+msgid "Done:"
+msgstr ""
+
+#: build/admin.js:5
+msgid "To do:"
+msgstr ""
+
+#: build/admin.js:5
+msgid "Shortcuts"
+msgstr ""
+
+#: build/admin.js:5
 msgid "Active extensions"
 msgstr ""
 
-#. translators: 1: extension name, 2: version number.
-#: build/admin.js:4
-#, js-format
-msgid "%1$s %2$s"
+#: build/admin.js:5
+msgid "No extensions active"
 msgstr ""
 
-#: build/admin.js:4
-#: build/admin.js:6
+#: build/admin.js:5
+msgid "Extensions add their settings here when they are active."
+msgstr ""
+
+#: build/admin.js:5
+msgid "Active"
+msgstr ""
+
+#: build/admin.js:5
+#: build/admin.js:9
 #: build/block.js:1
 msgid "Player"
 msgstr ""
 
-#: build/admin.js:4
+#: build/admin.js:5
 msgid "Choose how the player looks and which controls visitors get."
 msgstr ""
 
-#: build/admin.js:4
+#: build/admin.js:5
 msgid "The saved layout is not available, so visitors see the Standard layout. It was probably provided by an extension that is no longer active."
 msgstr ""
 
-#: build/admin.js:4
+#: build/admin.js:5
 #: build/block.js:1
 msgid "Layout"
 msgstr ""
 
-#: build/admin.js:4
+#: build/admin.js:5
 msgid "Standard shows the controls in a panel. Button only shows a single Listen button."
 msgstr ""
 
-#: build/admin.js:4
+#: build/admin.js:5
 msgid "Visitor controls"
 msgstr ""
 
-#: build/admin.js:4
+#: build/admin.js:5
 msgid "Visitors’ choices are remembered in their own browser only."
 msgstr ""
 
-#: build/admin.js:4
+#: build/admin.js:5
 msgid "Let visitors choose a voice"
 msgstr ""
 
-#: build/admin.js:4
+#: build/admin.js:5
 msgid "Lists the voices installed in the visitor’s browser."
 msgstr ""
 
-#: build/admin.js:4
+#: build/admin.js:5
 msgid "Let visitors choose the speed"
 msgstr ""
 
-#: build/admin.js:4
+#: build/admin.js:5
 msgid "Automatic (best match for the language)"
 msgstr ""
 
 #. translators: %s: voice name.
-#: build/admin.js:5
+#: build/admin.js:6
 #, js-format
 msgid "%s (not installed in this browser)"
 msgstr ""
 
-#: build/admin.js:5
 #: build/admin.js:6
+#: build/admin.js:9
 msgid "Voice and playback"
 msgstr ""
 
-#: build/admin.js:5
+#: build/admin.js:6
 msgid "Speech uses the voices installed on each visitor’s device, so the exact voice can differ between visitors."
 msgstr ""
 
-#: build/admin.js:5
+#: build/admin.js:6
 msgid "Language and voice"
 msgstr ""
 
-#: build/admin.js:5
+#: build/admin.js:6
 msgid "If the preferred voice is missing on a device, the player picks another voice for the same language, then the device default."
 msgstr ""
 
-#: build/admin.js:5
+#: build/admin.js:6
 msgid "Reading language"
 msgstr ""
 
 #. translators: %s: site language code such as en-US.
-#: build/admin.js:6
+#: build/admin.js:7
 #, js-format
 msgid "Leave empty to use the site language (%s)."
 msgstr ""
 
-#: build/admin.js:6
+#: build/admin.js:7
 msgid "Preferred voice"
 msgstr ""
 
-#: build/admin.js:6
+#. translators: %d: number of voices.
+#: build/admin.js:8
+#, js-format
+msgid "%d in this browser"
+msgid_plural "%d in this browser"
+msgstr[0] ""
+msgstr[1] ""
+
+#: build/admin.js:8
+msgid "No voices found"
+msgstr ""
+
+#: build/admin.js:8
 msgid "This browser reports no speech voices, so only automatic selection is available here."
 msgstr ""
 
-#: build/admin.js:6
+#: build/admin.js:8
 msgid "Lists the voices in this browser that match the reading language."
 msgstr ""
 
-#: build/admin.js:6
+#: build/admin.js:8
 msgid "Playback"
 msgstr ""
 
-#: build/admin.js:6
+#: build/admin.js:8
 msgid "Default speed"
 msgstr ""
 
-#: build/admin.js:6
+#: build/admin.js:8
 msgid "1 is normal speed. Between 0.5 and 2."
 msgstr ""
 
-#: build/admin.js:6
+#: build/admin.js:8
 msgid "Pitch"
 msgstr ""
 
-#: build/admin.js:6
+#: build/admin.js:8
+msgid "Lower"
+msgstr ""
+
+#: build/admin.js:8
+msgid "Natural"
+msgstr ""
+
+#: build/admin.js:8
+msgid "Higher"
+msgstr ""
+
+#: build/admin.js:8
 msgid "1 is the voice’s natural pitch. Some voices ignore this."
 msgstr ""
 
-#: build/admin.js:6
+#: build/admin.js:8
 msgid "Long text is read one sentence at a time, which avoids browsers stopping part-way through."
 msgstr ""
 
-#: build/admin.js:6
+#. translators: 1: list of content types, 2: placement such as "before the content".
+#: build/admin.js:9
+#, js-format
+msgid "Live on %1$s · %2$s"
+msgstr ""
+
+#: build/admin.js:9
+msgid "Automatic insertion is off"
+msgstr ""
+
+#: build/admin.js:9
 msgid "Let visitors listen to your content."
 msgstr ""
 
 #. translators: %s: version number.
-#: build/admin.js:7
+#: build/admin.js:10
 #, js-format
-msgid "Version %s"
+msgid "v%s"
 msgstr ""
 
-#: build/admin.js:7
+#: build/admin.js:10
 msgid "Settings sections"
 msgstr ""
 
-#: build/admin.js:7
-msgid "You have unsaved changes. They are kept while you switch sections."
+#: build/admin.js:10
+msgid "(unsaved changes)"
 msgstr ""
 
 #: build/block.js:1

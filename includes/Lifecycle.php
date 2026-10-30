@@ -49,7 +49,7 @@ final class Lifecycle {
 		 */
 
 		/**
-		 * Fires after Text to Speech Reader is installed or updated.
+		 * Fires after WPXERO Text to Speech is installed or updated.
 		 *
 		 * @since 1.0.0
 		 *

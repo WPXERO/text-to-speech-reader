@@ -1,6 +1,6 @@
 {
-    "name": "ttsr/text-to-speech-reader",
-    "description": "Development tooling for the Text to Speech Reader plugin. Not shipped in the plugin package.",
+    "name": "ttsr/wpxero-text-to-speech",
+    "description": "Development tooling for the WPXERO Text to Speech plugin. Not shipped in the plugin package.",
     "type": "wordpress-plugin",
     "license": "GPL-3.0-or-later",
     "require-dev": {

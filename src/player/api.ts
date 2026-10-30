@@ -1,7 +1,7 @@
 /**
  * The public frontend API, exposed as `window.TTSR`.
  *
- * This is the contract extensions (including Text to Speech Reader Pro)
+ * This is the contract extensions (including WPXERO Text to Speech Pro)
  * build on. Bump API_VERSION, and the PHP constant TTSR_API_VERSION, for any
  * breaking change. See docs/integration-api.md.
  */

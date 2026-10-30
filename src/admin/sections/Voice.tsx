@@ -49,7 +49,7 @@ export function Voice( { context }: { context: AdminContext } ) {
 			value: '',
 			label: __(
 				'Automatic (best match for the language)',
-				'text-to-speech-reader'
+				'wpxero-text-to-speech'
 			),
 		},
 		...[ ...matching ]
@@ -69,7 +69,7 @@ export function Voice( { context }: { context: AdminContext } ) {
 				/* translators: %s: voice name. */
 				__(
 					'%s (not installed in this browser)',
-					'text-to-speech-reader'
+					'wpxero-text-to-speech'
 				),
 				draft.voice
 			),
@@ -80,20 +80,20 @@ export function Voice( { context }: { context: AdminContext } ) {
 		<>
 			<SectionHeader
 				id="ttsr-section-title"
-				eyebrow={ __( 'Settings', 'text-to-speech-reader' ) }
-				title={ __( 'Voice and playback', 'text-to-speech-reader' ) }
+				eyebrow={ __( 'Settings', 'wpxero-text-to-speech' ) }
+				title={ __( 'Voice and playback', 'wpxero-text-to-speech' ) }
 				description={ __(
 					'Speech uses the voices installed on each visitor’s device, so the exact voice can differ between visitors.',
-					'text-to-speech-reader'
+					'wpxero-text-to-speech'
 				) }
 			/>
 
 			<SettingsPanel
 				icon="translate"
-				title={ __( 'Language and voice', 'text-to-speech-reader' ) }
+				title={ __( 'Language and voice', 'wpxero-text-to-speech' ) }
 				description={ __(
 					'If the preferred voice is missing on a device, the player picks another voice for the same language, then the device default.',
-					'text-to-speech-reader'
+					'wpxero-text-to-speech'
 				) }
 			>
 				<FieldGrid minWidth={ 240 }>
@@ -101,7 +101,7 @@ export function Voice( { context }: { context: AdminContext } ) {
 						mono
 						label={ __(
 							'Reading language',
-							'text-to-speech-reader'
+							'wpxero-text-to-speech'
 						) }
 						value={ draft.lang }
 						placeholder={ context.data.siteLanguage }
@@ -112,7 +112,7 @@ export function Voice( { context }: { context: AdminContext } ) {
 							/* translators: %s: site language code such as en-US. */
 							__(
 								'Leave empty to use the site language (%s).',
-								'text-to-speech-reader'
+								'wpxero-text-to-speech'
 							),
 							context.data.siteLanguage
 						) }
@@ -120,7 +120,7 @@ export function Voice( { context }: { context: AdminContext } ) {
 					<SelectField
 						label={ __(
 							'Preferred voice',
-							'text-to-speech-reader'
+							'wpxero-text-to-speech'
 						) }
 						aside={
 							<span className="ttsr-ui-help">
@@ -131,13 +131,13 @@ export function Voice( { context }: { context: AdminContext } ) {
 												'%d in this browser',
 												'%d in this browser',
 												matching.length,
-												'text-to-speech-reader'
+												'wpxero-text-to-speech'
 											),
 											matching.length
 										)
 									: __(
 											'No voices found',
-											'text-to-speech-reader'
+											'wpxero-text-to-speech'
 										) }
 							</span>
 						}
@@ -149,11 +149,11 @@ export function Voice( { context }: { context: AdminContext } ) {
 							voices.length === 0
 								? __(
 										'This browser reports no speech voices, so only automatic selection is available here.',
-										'text-to-speech-reader'
+										'wpxero-text-to-speech'
 									)
 								: __(
 										'Lists the voices in this browser that match the reading language.',
-										'text-to-speech-reader'
+										'wpxero-text-to-speech'
 									)
 						}
 					/>
@@ -162,10 +162,10 @@ export function Voice( { context }: { context: AdminContext } ) {
 
 			<SettingsPanel
 				icon="speed"
-				title={ __( 'Playback', 'text-to-speech-reader' ) }
+				title={ __( 'Playback', 'wpxero-text-to-speech' ) }
 			>
 				<RangeField
-					label={ __( 'Default speed', 'text-to-speech-reader' ) }
+					label={ __( 'Default speed', 'wpxero-text-to-speech' ) }
 					value={ draft.rate }
 					min={ 0.5 }
 					max={ 2 }
@@ -179,11 +179,11 @@ export function Voice( { context }: { context: AdminContext } ) {
 					error={ errors.rate }
 					help={ __(
 						'1 is normal speed. Between 0.5 and 2.',
-						'text-to-speech-reader'
+						'wpxero-text-to-speech'
 					) }
 				/>
 				<RangeField
-					label={ __( 'Pitch', 'text-to-speech-reader' ) }
+					label={ __( 'Pitch', 'wpxero-text-to-speech' ) }
 					value={ draft.pitch }
 					min={ 0.5 }
 					max={ 2 }
@@ -192,28 +192,28 @@ export function Voice( { context }: { context: AdminContext } ) {
 					marks={ [
 						{
 							value: 0.5,
-							label: __( 'Lower', 'text-to-speech-reader' ),
+							label: __( 'Lower', 'wpxero-text-to-speech' ),
 						},
 						{
 							value: 1,
-							label: __( 'Natural', 'text-to-speech-reader' ),
+							label: __( 'Natural', 'wpxero-text-to-speech' ),
 						},
 						{
 							value: 2,
-							label: __( 'Higher', 'text-to-speech-reader' ),
+							label: __( 'Higher', 'wpxero-text-to-speech' ),
 						},
 					] }
 					onChange={ ( value ) => store.set( 'pitch', value ) }
 					error={ errors.pitch }
 					help={ __(
 						'1 is the voice’s natural pitch. Some voices ignore this.',
-						'text-to-speech-reader'
+						'wpxero-text-to-speech'
 					) }
 				/>
 				<StatusNotice status="neutral">
 					{ __(
 						'Long text is read one sentence at a time, which avoids browsers stopping part-way through.',
-						'text-to-speech-reader'
+						'wpxero-text-to-speech'
 					) }
 				</StatusNotice>
 			</SettingsPanel>

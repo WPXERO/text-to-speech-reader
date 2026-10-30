@@ -78,11 +78,11 @@ function useLiveStatus() {
 		text: live
 			? sprintf(
 					/* translators: 1: list of content types, 2: placement such as "before the content". */
-					__( 'Live on %1$s · %2$s', 'text-to-speech-reader' ),
+					__( 'Live on %1$s · %2$s', 'wpxero-text-to-speech' ),
 					types.join( ', ' ),
 					placement.toLowerCase()
 				)
-			: __( 'Automatic insertion is off', 'text-to-speech-reader' ),
+			: __( 'Automatic insertion is off', 'wpxero-text-to-speech' ),
 	};
 }
 
@@ -107,7 +107,7 @@ export function App() {
 		const core: AdminSection[] = [
 			{
 				id: 'overview',
-				label: __( 'Overview', 'text-to-speech-reader' ),
+				label: __( 'Overview', 'wpxero-text-to-speech' ),
 				group: 'start',
 				order: 10,
 				icon: 'space_dashboard',
@@ -116,7 +116,7 @@ export function App() {
 			},
 			{
 				id: 'general',
-				label: __( 'General', 'text-to-speech-reader' ),
+				label: __( 'General', 'wpxero-text-to-speech' ),
 				group: 'core',
 				order: 20,
 				icon: 'tune',
@@ -125,7 +125,7 @@ export function App() {
 			},
 			{
 				id: 'player',
-				label: __( 'Player', 'text-to-speech-reader' ),
+				label: __( 'Player', 'wpxero-text-to-speech' ),
 				group: 'core',
 				order: 30,
 				icon: 'smart_display',
@@ -135,7 +135,7 @@ export function App() {
 			},
 			{
 				id: 'voice',
-				label: __( 'Voice and playback', 'text-to-speech-reader' ),
+				label: __( 'Voice and playback', 'wpxero-text-to-speech' ),
 				group: 'core',
 				order: 40,
 				icon: 'record_voice_over',
@@ -145,7 +145,7 @@ export function App() {
 			},
 			{
 				id: 'help',
-				label: __( 'Help', 'text-to-speech-reader' ),
+				label: __( 'Help', 'wpxero-text-to-speech' ),
 				group: 'resources',
 				order: 90,
 				icon: 'help',
@@ -172,8 +172,8 @@ export function App() {
 	const groups = useMemo(
 		() =>
 			filterGroups( {
-				core: __( 'Settings', 'text-to-speech-reader' ),
-				resources: __( 'Resources', 'text-to-speech-reader' ),
+				core: __( 'Settings', 'wpxero-text-to-speech' ),
+				resources: __( 'Resources', 'wpxero-text-to-speech' ),
 			} ),
 		[]
 	);
@@ -221,14 +221,14 @@ export function App() {
 	return (
 		<div className="ttsr-ui ttsr-admin">
 			<PageHeader
-				title={ __( 'Text to Speech Reader', 'text-to-speech-reader' ) }
+				title={ __( 'WPXERO Text to Speech', 'wpxero-text-to-speech' ) }
 				description={ __(
 					'Let visitors listen to your content.',
-					'text-to-speech-reader'
+					'wpxero-text-to-speech'
 				) }
 				meta={ sprintf(
 					/* translators: %s: version number. */
-					__( 'v%s', 'text-to-speech-reader' ),
+					__( 'v%s', 'wpxero-text-to-speech' ),
 					data.version
 				) }
 				badges={ badges }
@@ -247,7 +247,7 @@ export function App() {
 							>
 								{ __(
 									'View latest post',
-									'text-to-speech-reader'
+									'wpxero-text-to-speech'
 								) }
 							</Button>
 						) : (
@@ -257,7 +257,7 @@ export function App() {
 							>
 								{ __(
 									'Write a post',
-									'text-to-speech-reader'
+									'wpxero-text-to-speech'
 								) }
 							</Button>
 						) }
@@ -269,7 +269,7 @@ export function App() {
 					className="ttsr-admin__nav"
 					aria-label={ __(
 						'Settings sections',
-						'text-to-speech-reader'
+						'wpxero-text-to-speech'
 					) }
 				>
 					{ Object.entries( grouped ).map( ( [ group, items ] ) => (
@@ -315,7 +315,7 @@ export function App() {
 														<span className="screen-reader-text">
 															{ __(
 																'(unsaved changes)',
-																'text-to-speech-reader'
+																'wpxero-text-to-speech'
 															) }
 														</span>
 													</span>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Integration tests for Text to Speech Reader. Run with Free active, with or
+ * Integration tests for WPXERO Text to Speech. Run with Free active, with or
  * without Pro (they must pass in both cases).
  *
  * @package TTSR\Tests
@@ -18,8 +18,8 @@ WP_CLI::log( $ttsr_pro ? '(Pro is active)' : '(Free only)' );
 ttsr_test_group( 'Bootstrap' );
 ttsr_assert( defined( 'TTSR_VERSION' ) && defined( 'TTSR_API_VERSION' ), 'version constants are defined' );
 ttsr_assert( did_action( 'ttsr_loaded' ) > 0, 'ttsr_loaded fired' );
-ttsr_assert( shortcode_exists( 'text_to_speech_reader' ), 'shortcode is registered' );
-ttsr_assert( WP_Block_Type_Registry::get_instance()->is_registered( 'text-to-speech-reader/player' ), 'block is registered' );
+ttsr_assert( shortcode_exists( 'wpxero_text_to_speech' ), 'shortcode is registered' );
+ttsr_assert( WP_Block_Type_Registry::get_instance()->is_registered( 'wpxero-text-to-speech/player' ), 'block is registered' );
 ttsr_assert( wp_script_is( 'ttsr-player', 'registered' ) && wp_style_is( 'ttsr-player', 'registered' ), 'player assets are registered' );
 ttsr_assert( ! wp_script_is( 'ttsr-player', 'enqueued' ), 'player assets are not enqueued by default' );
 
@@ -139,22 +139,22 @@ $ttsr_protected = ttsr_test_post( array( 'post_password' => 'secret' ) );
 ttsr_assert_same( 0, ttsr_count_players( ttsr_render_content( $ttsr_protected ) ), 'no player on password-protected posts' );
 
 ttsr_test_group( 'Shortcode and block' );
-$ttsr_sc_post = ttsr_test_post( array( 'post_content' => '<p>Intro.</p>[text_to_speech_reader layout="button" title="no" rate="1.25"]<p>Body.</p>' ) );
+$ttsr_sc_post = ttsr_test_post( array( 'post_content' => '<p>Intro.</p>[wpxero_text_to_speech layout="button" title="no" rate="1.25"]<p>Body.</p>' ) );
 $ttsr_html    = ttsr_render_content( $ttsr_sc_post );
 ttsr_assert_same( 1, ttsr_count_players( $ttsr_html ), 'shortcode replaces the automatic player instead of adding a second one' );
 $ttsr_config = ttsr_player_config( $ttsr_html );
 ttsr_assert( 'shortcode' === $ttsr_config['source'] && 'button' === $ttsr_config['layout'] && 1.25 === $ttsr_config['rate'] && '' === $ttsr_config['title'], 'shortcode attributes are applied' );
 ttsr_assert_same( 'closest', $ttsr_config['scope'], 'shortcode reads the surrounding article' );
 
-$ttsr_bad    = do_shortcode( '[text_to_speech_reader layout="<script>" rate="99" lang="x y"]' );
+$ttsr_bad    = do_shortcode( '[wpxero_text_to_speech layout="<script>" rate="99" lang="x y"]' );
 $ttsr_config = ttsr_player_config( $ttsr_bad );
 ttsr_assert( 'standard' === $ttsr_config['layout'] && 99.0 !== $ttsr_config['rate'] && false === strpos( $ttsr_bad, '<script>' ), 'invalid shortcode attributes fall back to the settings' );
 
-$ttsr_multi = do_shortcode( '[text_to_speech_reader][text_to_speech_reader]' );
+$ttsr_multi = do_shortcode( '[wpxero_text_to_speech][wpxero_text_to_speech]' );
 preg_match_all( '/id="(ttsr-player-\d+)"/', $ttsr_multi, $ttsr_ids );
 ttsr_assert( 2 === count( array_unique( $ttsr_ids[1] ) ), 'multiple players get unique ids' );
 
-$ttsr_block_post = ttsr_test_post( array( 'post_content' => '<!-- wp:paragraph --><p>Hello.</p><!-- /wp:paragraph --><!-- wp:text-to-speech-reader/player {"layout":"button","includeTitle":"yes"} /-->' ) );
+$ttsr_block_post = ttsr_test_post( array( 'post_content' => '<!-- wp:paragraph --><p>Hello.</p><!-- /wp:paragraph --><!-- wp:wpxero-text-to-speech/player {"layout":"button","includeTitle":"yes"} /-->' ) );
 $ttsr_html       = ttsr_render_content( $ttsr_block_post );
 $ttsr_config     = ttsr_player_config( $ttsr_html );
 ttsr_assert( 1 === ttsr_count_players( $ttsr_html ) && 'block' === $ttsr_config['source'] && 'button' === $ttsr_config['layout'] && 'TTSR test post' === $ttsr_config['title'], 'block renders one configured player and suppresses the automatic one' );
@@ -173,7 +173,7 @@ add_filter(
 	},
 	99
 );
-$ttsr_html = do_shortcode( '[text_to_speech_reader]' );
+$ttsr_html = do_shortcode( '[wpxero_text_to_speech]' );
 ttsr_assert( false !== strpos( $ttsr_html, '--ttsr-radius:6px' ) && false === strpos( $ttsr_html, 'javascript' ) && false === strpos( $ttsr_html, 'color:red' ), 'style filter output is limited to safe custom properties' );
 remove_all_filters( 'ttsr_player_style', 99 );
 

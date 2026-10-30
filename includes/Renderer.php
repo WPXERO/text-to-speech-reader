@@ -123,10 +123,10 @@ final class Renderer {
 			'contentSelector'  => '',
 			'excludeSelectors' => array(),
 			'labels'           => array(
-				'listen' => __( 'Listen', 'text-to-speech-reader' ),
-				'pause'  => __( 'Pause', 'text-to-speech-reader' ),
-				'resume' => __( 'Resume', 'text-to-speech-reader' ),
-				'stop'   => __( 'Stop', 'text-to-speech-reader' ),
+				'listen' => __( 'Listen', 'wpxero-text-to-speech' ),
+				'pause'  => __( 'Pause', 'wpxero-text-to-speech' ),
+				'resume' => __( 'Resume', 'wpxero-text-to-speech' ),
+				'stop'   => __( 'Stop', 'wpxero-text-to-speech' ),
 			),
 			'extensions'       => array(),
 		);
@@ -181,7 +181,7 @@ final class Renderer {
 			esc_attr( $config['id'] ),
 			esc_attr( implode( ' ', $classes ) ),
 			esc_attr( (string) wp_json_encode( $config ) ),
-			esc_attr__( 'Listen to this content', 'text-to-speech-reader' ),
+			esc_attr__( 'Listen to this content', 'wpxero-text-to-speech' ),
 			$style ? ' style="' . esc_attr( $style ) . '"' : ''
 		);
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * The [text_to_speech_reader] shortcode.
+ * The [wpxero_text_to_speech] shortcode.
  *
  * @package TTSR
  */

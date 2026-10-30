@@ -2,13 +2,13 @@
 
 ## Feature matrix
 
-| Area | Free (Text to Speech Reader) | Pro (Text to Speech Reader Pro) |
+| Area | Free (WPXERO Text to Speech) | Pro (WPXERO Text to Speech Pro) |
 | --- | --- | --- |
 | Speech | Browser `speechSynthesis`; play, pause, resume, stop; sentence chunking; voice fallback; status announcements | Uses the core engine through `window.TTSR` (no second engine) |
 | Visitor controls | Voice and speed selects (each optional) | Show/hide Stop, status text, progress |
 | Layouts | Standard, Button only | Expanded, Compact, Minimal; colours, radius, labels |
 | Placement | Before/after content; posts, pages, public CPTs; per-post opt-out | After paragraph N; floating mini player |
-| Manual placement | Block `text-to-speech-reader/player`, shortcode `[text_to_speech_reader]` | Per-post overrides panel |
+| Manual placement | Block `wpxero-text-to-speech/player`, shortcode `[wpxero_text_to_speech]` | Per-post overrides panel |
 | Content | Reads the article; skips scripts, forms, nav, hidden, `aria-hidden`, `.screen-reader-text`, `[data-ttsr-skip]` | Content selector, exclusion selectors, category/tag and word-count rules |
 | Reading aids | – | Read-along highlighting, read selected text |
 | Integrations | – | WooCommerce product pages (optional) |
@@ -27,18 +27,18 @@ The two plugins are separate, standard WordPress plugins, each in its own
 directory under `wp-content/plugins` with its own build, tests and package:
 
 ```
-text-to-speech-reader/        Core (this plugin)
-  text-to-speech-reader.php   includes/  blocks/  build/  languages/  uninstall.php
+wpxero-text-to-speech/        Core (this plugin)
+  wpxero-text-to-speech.php   includes/  blocks/  build/  languages/  uninstall.php
   src/{player,admin,admin-ui,block,editor,utils}  tests/{js,php}  bin/  docs/
-text-to-speech-reader-pro/    Add-on; requires the core
-  text-to-speech-reader-pro.php  includes/  build/  languages/  uninstall.php
+wpxero-text-to-speech-pro/    Add-on; requires the core
+  wpxero-text-to-speech-pro.php  includes/  build/  languages/  uninstall.php
   src/{frontend,admin,editor}  tests/{js,php}  bin/
 ```
 
 Pro contains no copy of core code. At runtime it uses the core's PHP hooks
 and services, `window.TTSR` on the frontend and the core's admin UI library
 (`ttsr-admin-ui`, `window.ttsr.adminUi`) in wp-admin. During development it
-imports core *types* from the sibling checkout (`../text-to-speech-reader`,
+imports core *types* from the sibling checkout (`../wpxero-text-to-speech`,
 or `TTSR_CORE_DIR`); those imports are erased at build time.
 
 React and `@wordpress/*` are externals supplied by WordPress (see each

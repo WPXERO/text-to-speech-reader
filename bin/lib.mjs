@@ -14,12 +14,12 @@ export const DIST = path.join( ROOT, 'dist' );
 
 /** This plugin and what its package contains. */
 export const PLUGIN = {
-	slug: 'text-to-speech-reader',
-	main: 'text-to-speech-reader.php',
+	slug: 'wpxero-text-to-speech',
+	main: 'wpxero-text-to-speech.php',
 	versionConstant: 'TTSR_VERSION',
-	domain: 'text-to-speech-reader',
+	domain: 'wpxero-text-to-speech',
 	include: [
-		'text-to-speech-reader.php',
+		'wpxero-text-to-speech.php',
 		'uninstall.php',
 		'readme.txt',
 		'LICENSE.txt',
@@ -29,7 +29,7 @@ export const PLUGIN = {
 		'languages',
 	],
 	required: [
-		'text-to-speech-reader.php',
+		'wpxero-text-to-speech.php',
 		'readme.txt',
 		'LICENSE.txt',
 		'uninstall.php',
@@ -45,7 +45,7 @@ export const PLUGIN = {
 		'build/admin.css',
 		'build/block.js',
 		'build/editor.js',
-		'languages/text-to-speech-reader.pot',
+		'languages/wpxero-text-to-speech.pot',
 	],
 };
 

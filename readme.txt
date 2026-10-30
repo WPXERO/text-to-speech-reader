@@ -1,4 +1,4 @@
-=== Text to Speech Reader ===
+=== WPXERO Text to Speech ===
 Tags: text to speech, accessibility, read aloud, listen, speech
 Requires at least: 6.6
 Tested up to: 7.1
@@ -11,7 +11,7 @@ Add an accessible Listen button that reads your posts aloud with the visitor's o
 
 == Description ==
 
-Text to Speech Reader adds a small player to your content. When a visitor presses **Listen**, their browser reads the article aloud using the speech voices built into their device (the Web Speech API).
+WPXERO Text to Speech adds a small player to your content. When a visitor presses **Listen**, their browser reads the article aloud using the speech voices built into their device (the Web Speech API).
 
 * **Works out of the box** – the player appears on single posts as soon as the plugin is active.
 * **No external services** – nothing is sent to a speech provider and the plugin makes no remote requests. There is nothing to sign up for.
@@ -31,6 +31,12 @@ Some browser vendors provide online voices that process the text on their own se
 
 This plugin helps visitors who prefer to listen. It does not by itself make a site conform to WCAG or any other accessibility standard.
 
+= Source code and build =
+
+The JavaScript and CSS in the `build/` folder are compiled. Their human-readable source (TypeScript, React and SCSS in `src/`), build configuration and tests are public at [github.com/WPXERO/wpxero-text-to-speech](https://github.com/WPXERO/wpxero-text-to-speech).
+
+To rebuild the files, use Node.js 22.22 or later and run `npm install` and then `npm run build` in the plugin's source directory. The build uses `@wordpress/scripts` (webpack).
+
 == Installation ==
 
 1. Install and activate the plugin from **Plugins › Add New**, or upload the ZIP file there.
@@ -43,7 +49,7 @@ This plugin helps visitors who prefer to listen. It does not by itself make a si
 
 Use the **Text to Speech Player** block, or the shortcode:
 
-`[text_to_speech_reader]`
+`[wpxero_text_to_speech]`
 
 Optional attributes:
 
@@ -52,11 +58,11 @@ Optional attributes:
 * `lang` – a language code such as `en-GB`
 * `rate` – speed from `0.5` to `2`
 
-Example: `[text_to_speech_reader layout="button" title="no" rate="1.25"]`. Invalid values are ignored and the settings are used instead. A post that contains the block or shortcode does not also get the automatic player.
+Example: `[wpxero_text_to_speech layout="button" title="no" rate="1.25"]`. Invalid values are ignored and the settings are used instead. A post that contains the block or shortcode does not also get the automatic player.
 
 = How do I hide the player on one post? =
 
-In the block editor, open the **Text to Speech Reader** panel in the post sidebar and turn off **Show the automatic player**.
+In the block editor, open the **WPXERO Text to Speech** panel in the post sidebar and turn off **Show the automatic player**.
 
 = The player says "There is no text to read here" =
 
@@ -81,7 +87,7 @@ They are kept, so you can reactivate later. To remove them when deleting the plu
 
 == Credits ==
 
-Text to Speech Reader is an independent reimplementation inspired by the GPL-licensed "Text To Speech TTS Accessibility" plugin (text-to-audio) by Azizul Hasan / AtlasAiDev. It does not include that plugin's code.
+WPXERO Text to Speech is an independent reimplementation inspired by the GPL-licensed "Text To Speech TTS Accessibility" plugin (text-to-audio) by Azizul Hasan / AtlasAiDev. It does not include that plugin's code.
 
 The settings screen bundles these third-party assets:
 

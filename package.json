@@ -1,8 +1,8 @@
 {
-	"name": "text-to-speech-reader",
+	"name": "wpxero-text-to-speech",
 	"version": "1.0.0",
 	"private": true,
-	"description": "Development tooling for the Text to Speech Reader WordPress plugin. Not shipped in the plugin package.",
+	"description": "Development tooling for the WPXERO Text to Speech WordPress plugin. Not shipped in the plugin package.",
 	"license": "GPL-3.0-or-later",
 	"engines": {
 		"node": ">=22"

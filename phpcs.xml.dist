@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<ruleset name="Text to Speech Reader">
-	<description>WordPress Coding Standards for Text to Speech Reader.</description>
+<ruleset name="WPXERO Text to Speech">
+	<description>WordPress Coding Standards for WPXERO Text to Speech.</description>
 
 	<file>.</file>
 
@@ -27,7 +27,7 @@
 	<rule ref="WordPress.WP.I18n">
 		<properties>
 			<property name="text_domain" type="array">
-				<element value="text-to-speech-reader"/>
+				<element value="wpxero-text-to-speech"/>
 			</property>
 		</properties>
 	</rule>

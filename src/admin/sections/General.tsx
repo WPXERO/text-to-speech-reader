@@ -22,37 +22,37 @@ export function General( { context }: { context: AdminContext } ) {
 		<>
 			<SectionHeader
 				id="ttsr-section-title"
-				eyebrow={ __( 'Settings', 'text-to-speech-reader' ) }
-				title={ __( 'General', 'text-to-speech-reader' ) }
+				eyebrow={ __( 'Settings', 'wpxero-text-to-speech' ) }
+				title={ __( 'General', 'wpxero-text-to-speech' ) }
 				description={ __(
 					'Choose where the player appears automatically. You can also place it by hand with the block or the shortcode.',
-					'text-to-speech-reader'
+					'wpxero-text-to-speech'
 				) }
 			/>
 
 			<SettingsPanel
 				icon="bolt"
-				title={ __( 'Automatic insertion', 'text-to-speech-reader' ) }
+				title={ __( 'Automatic insertion', 'wpxero-text-to-speech' ) }
 				description={ __(
 					'Adds the player to the main content of single posts and pages. It is never added to archives, feeds or excerpts.',
-					'text-to-speech-reader'
+					'wpxero-text-to-speech'
 				) }
 			>
 				<ToggleField
 					label={ __(
 						'Add the player automatically',
-						'text-to-speech-reader'
+						'wpxero-text-to-speech'
 					) }
 					value={ draft.auto_insert }
 					onChange={ ( value ) => store.set( 'auto_insert', value ) }
 					error={ errors.auto_insert }
 					help={ __(
-						'Individual posts can opt out from the “Text to Speech Reader” panel in the editor.',
-						'text-to-speech-reader'
+						'Individual posts can opt out from the “WPXERO Text to Speech” panel in the editor.',
+						'wpxero-text-to-speech'
 					) }
 				/>
 				<CheckboxGroupField
-					label={ __( 'Content types', 'text-to-speech-reader' ) }
+					label={ __( 'Content types', 'wpxero-text-to-speech' ) }
 					options={ data.postTypes }
 					value={ draft.post_types }
 					onChange={ ( value ) => store.set( 'post_types', value ) }
@@ -60,7 +60,7 @@ export function General( { context }: { context: AdminContext } ) {
 					disabled={ ! draft.auto_insert }
 				/>
 				<ChoiceField
-					label={ __( 'Placement', 'text-to-speech-reader' ) }
+					label={ __( 'Placement', 'wpxero-text-to-speech' ) }
 					options={ withCurrent(
 						data.placements,
 						draft.placement
@@ -80,16 +80,16 @@ export function General( { context }: { context: AdminContext } ) {
 
 			<SettingsPanel
 				icon="article"
-				title={ __( 'What is read', 'text-to-speech-reader' ) }
+				title={ __( 'What is read', 'wpxero-text-to-speech' ) }
 				description={ __(
 					'Scripts, forms, navigation, hidden elements and the player itself are always skipped.',
-					'text-to-speech-reader'
+					'wpxero-text-to-speech'
 				) }
 			>
 				<ToggleField
 					label={ __(
 						'Read the title first',
-						'text-to-speech-reader'
+						'wpxero-text-to-speech'
 					) }
 					value={ draft.include_title }
 					onChange={ ( value ) =>
@@ -102,16 +102,16 @@ export function General( { context }: { context: AdminContext } ) {
 			<SettingsPanel
 				icon="database"
 				tone="danger"
-				title={ __( 'Data', 'text-to-speech-reader' ) }
+				title={ __( 'Data', 'wpxero-text-to-speech' ) }
 				description={ __(
 					'Settings are kept when the plugin is deactivated or updated.',
-					'text-to-speech-reader'
+					'wpxero-text-to-speech'
 				) }
 			>
 				<ToggleField
 					label={ __(
 						'Delete settings when the plugin is deleted',
-						'text-to-speech-reader'
+						'wpxero-text-to-speech'
 					) }
 					tone="danger"
 					value={ draft.delete_data_on_uninstall }
@@ -121,17 +121,17 @@ export function General( { context }: { context: AdminContext } ) {
 					error={ errors.delete_data_on_uninstall }
 					help={ __(
 						'Removes this plugin’s settings and per-post options when you delete it from the Plugins screen.',
-						'text-to-speech-reader'
+						'wpxero-text-to-speech'
 					) }
 				/>
 			</SettingsPanel>
 
 			<SaveActions
 				store={ store }
-				resetLabel={ __( 'Restore defaults', 'text-to-speech-reader' ) }
+				resetLabel={ __( 'Restore defaults', 'wpxero-text-to-speech' ) }
 				resetDescription={ __(
-					'All Text to Speech Reader settings return to their defaults. Per-post choices are kept.',
-					'text-to-speech-reader'
+					'All WPXERO Text to Speech settings return to their defaults. Per-post choices are kept.',
+					'wpxero-text-to-speech'
 				) }
 			/>
 		</>
@@ -155,7 +155,7 @@ export function withCurrent( options: Option[], current: string ): Option[] {
 			value: current,
 			label: sprintf(
 				/* translators: %s: internal name of an option that is not currently available. */
-				__( 'Unavailable: %s', 'text-to-speech-reader' ),
+				__( 'Unavailable: %s', 'wpxero-text-to-speech' ),
 				current
 			),
 		},

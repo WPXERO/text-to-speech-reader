@@ -4,7 +4,7 @@
  *
  *   WP_CLI="wp --path=/path/to/wordpress" npm run test:wp
  *
- * The plugin must be installed (or symlinked) as text-to-speech-reader. It
+ * The plugin must be installed (or symlinked) as wpxero-text-to-speech. It
  * is activated for the run and the previous plugin state is restored
  * afterwards; other active plugins (including Pro) stay as they are, and the
  * suite must pass either way. Tests create and delete their own posts.
@@ -14,7 +14,7 @@ import path from 'node:path';
 import { ROOT, wpCli } from './lib.mjs';
 
 const [ command, ...baseArgs ] = wpCli();
-const FREE = 'text-to-speech-reader/text-to-speech-reader.php';
+const FREE = 'wpxero-text-to-speech/wpxero-text-to-speech.php';
 
 function wp( args, { quiet = false } = {} ) {
 	const result = spawnSync( command, [ ...baseArgs, ...args ], {
@@ -59,7 +59,7 @@ const restore = Object.values( JSON.parse( original.stdout.trim() ) );
 
 let failed = false;
 try {
-	console.log( '\n=== Text to Speech Reader ===' );
+	console.log( '\n=== WPXERO Text to Speech ===' );
 	setActive( [ ...restore.filter( ( p ) => p !== FREE ), FREE ] );
 	failed =
 		wp( [ 'eval-file', path.join( ROOT, 'tests/php/free.php' ) ] )

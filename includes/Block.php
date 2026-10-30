@@ -1,6 +1,6 @@
 <?php
 /**
- * The text-to-speech-reader/player block.
+ * The wpxero-text-to-speech/player block.
  *
  * @package TTSR
  */

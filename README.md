@@ -1,10 +1,10 @@
-# Text to Speech Reader
+# WPXERO Text to Speech
 
 Development README for the WordPress plugin. User documentation is in
 `readme.txt`. The plugin reads content aloud with the browser's Web Speech
 API; it needs no account or API key and makes no remote requests.
 
-[Text to Speech Reader Pro](../text-to-speech-reader-pro) is a separate
+[WPXERO Text to Speech Pro](../wpxero-text-to-speech-pro) is a separate
 add-on that extends this plugin through the documented extension API.
 
 * [docs/architecture.md](docs/architecture.md) — feature matrix, code structure, security and data lifecycle.
@@ -15,7 +15,7 @@ add-on that extends this plugin through the documented extension API.
 ## Layout
 
 ```
-text-to-speech-reader.php   Plugin header, constants, bootstrap
+wpxero-text-to-speech.php   Plugin header, constants, bootstrap
 uninstall.php               Data removal (opt-in)
 includes/                   PHP classes (namespace TTSR)
 blocks/player/block.json    Block metadata (registered from PHP)
@@ -64,8 +64,8 @@ npm test                 # Vitest unit tests
 npx vitest run tests/js/engine.test.ts   # a single test file
 npx vitest run -t "pause"                # tests matching a name
 WP_CLI="wp --path=/path/to/wordpress" npm run test:wp   # integration tests in WordPress
-npm run makepot          # languages/text-to-speech-reader.pot (needs WP-CLI)
-npm run package          # dist/text-to-speech-reader.zip
+npm run makepot          # languages/wpxero-text-to-speech.pot (needs WP-CLI)
+npm run package          # dist/wpxero-text-to-speech.zip
 npm run verify-package   # validate the ZIP
 npm run release          # everything above in order; prints the ZIP path
 ```
@@ -92,7 +92,7 @@ state afterwards, so use a test site.
    extension contract.
 2. `npm run release` (with `WP_CLI` set to also run the integration tests).
 3. Run Plugin Check on the unzipped package
-   (`wp plugin check text-to-speech-reader`) and work through the manual
+   (`wp plugin check wpxero-text-to-speech`) and work through the manual
    checklist in `docs/testing.md`.
 
 4. Commit, then push a tag matching the version:

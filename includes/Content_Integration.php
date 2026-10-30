@@ -16,8 +16,8 @@ defined( 'ABSPATH' ) || exit;
  */
 final class Content_Integration {
 
-	const SHORTCODE = 'text_to_speech_reader';
-	const BLOCK     = 'text-to-speech-reader/player';
+	const SHORTCODE = 'wpxero_text_to_speech';
+	const BLOCK     = 'wpxero-text-to-speech/player';
 
 	/**
 	 * Settings service.

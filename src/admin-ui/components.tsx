@@ -325,7 +325,7 @@ function Feedback( props: { id: string; help?: ReactNode; error?: string } ) {
 				<Icon name="error" filled size={ 16 } />
 				<span>
 					<span className="screen-reader-text">
-						{ __( 'Error:', 'text-to-speech-reader' ) }{ ' ' }
+						{ __( 'Error:', 'wpxero-text-to-speech' ) }{ ' ' }
 					</span>
 					{ props.error }
 				</span>
@@ -537,7 +537,7 @@ export function NumberField(
 					<Button
 						variant="tertiary"
 						icon="remove"
-						label={ __( 'Decrease', 'text-to-speech-reader' ) }
+						label={ __( 'Decrease', 'wpxero-text-to-speech' ) }
 						disabled={ props.disabled || props.value <= props.min }
 						onClick={ () => by( -props.stepper! ) }
 					/>
@@ -545,7 +545,7 @@ export function NumberField(
 					<Button
 						variant="tertiary"
 						icon="add"
-						label={ __( 'Increase', 'text-to-speech-reader' ) }
+						label={ __( 'Increase', 'wpxero-text-to-speech' ) }
 						disabled={ props.disabled || props.value >= props.max }
 						onClick={ () => by( props.stepper! ) }
 					/>
@@ -891,7 +891,7 @@ export function ColorField(
 						type="color"
 						aria-label={ sprintf(
 							/* translators: %s: setting name, such as "Accent colour". */
-							__( 'Pick %s', 'text-to-speech-reader' ),
+							__( 'Pick %s', 'wpxero-text-to-speech' ),
 							props.label
 						) }
 						value={ sixDigits( valid ? props.value : fallback ) }
@@ -943,7 +943,7 @@ export function ColorField(
 						disabled={ props.disabled }
 						onClick={ () => props.onChange( '' ) }
 					>
-						{ __( 'Use default', 'text-to-speech-reader' ) }
+						{ __( 'Use default', 'wpxero-text-to-speech' ) }
 					</Button>
 				) }
 			</div>
@@ -980,7 +980,7 @@ export function StatusNotice( props: {
 					variant="tertiary"
 					size="small"
 					icon="close"
-					label={ __( 'Dismiss', 'text-to-speech-reader' ) }
+					label={ __( 'Dismiss', 'wpxero-text-to-speech' ) }
 					onClick={ props.onDismiss }
 				/>
 			) }
@@ -1063,7 +1063,7 @@ export function ResetConfirm( props: {
 					<p className="ttsr-ui-modal__text">{ props.description }</p>
 					<div className="ttsr-ui-modal-actions">
 						<Button onClick={ () => setOpen( false ) }>
-							{ __( 'Cancel', 'text-to-speech-reader' ) }
+							{ __( 'Cancel', 'wpxero-text-to-speech' ) }
 						</Button>
 						<Button
 							variant="primary"
@@ -1107,7 +1107,7 @@ export function SaveActions< T >( props: {
 		}
 		if ( await saveAll() ) {
 			setJustSaved( true );
-			setToast( __( 'Settings saved', 'text-to-speech-reader' ) );
+			setToast( __( 'Settings saved', 'wpxero-text-to-speech' ) );
 		}
 	};
 
@@ -1142,7 +1142,7 @@ export function SaveActions< T >( props: {
 
 	let state: ReactNode;
 	if ( saving ) {
-		state = __( 'Saving…', 'text-to-speech-reader' );
+		state = __( 'Saving…', 'wpxero-text-to-speech' );
 	} else if ( dirty ) {
 		state = (
 			<>
@@ -1153,7 +1153,7 @@ export function SaveActions< T >( props: {
 						'%d unsaved change',
 						'%d unsaved changes',
 						Math.max( 1, changes ),
-						'text-to-speech-reader'
+						'wpxero-text-to-speech'
 					),
 					Math.max( 1, changes )
 				) }
@@ -1164,8 +1164,8 @@ export function SaveActions< T >( props: {
 			<>
 				<Icon name="check_circle" filled className="ttsr-ui-save__ok" />
 				{ justSaved
-					? __( 'Changes saved', 'text-to-speech-reader' )
-					: __( 'All changes saved', 'text-to-speech-reader' ) }
+					? __( 'Changes saved', 'wpxero-text-to-speech' )
+					: __( 'All changes saved', 'wpxero-text-to-speech' ) }
 			</>
 		);
 	}
@@ -1199,7 +1199,7 @@ export function SaveActions< T >( props: {
 										props.store.getState().message ||
 											__(
 												'Settings restored to their defaults.',
-												'text-to-speech-reader'
+												'wpxero-text-to-speech'
 											)
 									);
 								}
@@ -1211,7 +1211,7 @@ export function SaveActions< T >( props: {
 						onClick={ discardAll }
 						disabled={ ! dirty || saving }
 					>
-						{ __( 'Discard changes', 'text-to-speech-reader' ) }
+						{ __( 'Discard changes', 'wpxero-text-to-speech' ) }
 					</Button>
 					<Button
 						variant="primary"
@@ -1219,7 +1219,7 @@ export function SaveActions< T >( props: {
 						busy={ saving }
 						disabled={ ! dirty || saving }
 					>
-						{ __( 'Save changes', 'text-to-speech-reader' ) }
+						{ __( 'Save changes', 'wpxero-text-to-speech' ) }
 						<kbd className="ttsr-ui-save__kbd" aria-hidden="true">
 							{ isApple ? '⌘S' : 'Ctrl S' }
 						</kbd>
